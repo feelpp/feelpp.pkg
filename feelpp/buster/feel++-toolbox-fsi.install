@@ -1,6 +1,0 @@
-usr/bin/feelpp_toolbox_fsi*
-usr/lib/libfeelpp_model_fsi*.so
-
-usr/include/feelpp/toolboxes/feel/feelmodels/fsi/aitkenrelaxationfsi.hpp
-usr/include/feelpp/toolboxes/feel/feelmodels/fsi/fsi.hpp
-usr/include/feelpp/toolboxes/feel/feelmodels/fsi/interpolationfsi.hpp
