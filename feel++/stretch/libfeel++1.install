@@ -1,0 +1,9 @@
+usr/lib/libfeelpp.so.*
+usr/lib/libfeelpp_gflags.so.*
+usr/lib/libfeelpp_gflags_nothreads.so.*
+usr/lib/libfeelpp_ginac.so.*
+usr/lib/libfeelpp_glog.so.*
+usr/lib/libfeelpp_metis.so
+usr/lib/*/libfeelpp_nlopt.so.*
+#usr/lib/libfeelpp_nlopt.so.*
+usr/bin/feelpp_excompiler

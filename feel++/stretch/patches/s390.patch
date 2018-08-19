@@ -1,0 +1,41 @@
+Index: feel++-0.90.0/feel/feelcore/debug.cpp
+===================================================================
+--- feel++-0.90.0.orig/feel/feelcore/debug.cpp	2011-03-19 08:16:52.000000000 +0100
++++ feel++-0.90.0/feel/feelcore/debug.cpp	2011-03-19 08:17:26.000000000 +0100
+@@ -399,6 +399,8 @@
+     }
+     return *this;
+ }
++#endif
++#if defined( __APPLE__ )
+ DebugStream&
+ DebugStream::operator<<( ptrdiff_t s)
+ {
+Index: feel++-0.90.0/feel/feelcore/debug.hpp
+===================================================================
+--- feel++-0.90.0.orig/feel/feelcore/debug.hpp	2011-03-19 08:14:55.000000000 +0100
++++ feel++-0.90.0/feel/feelcore/debug.hpp	2011-03-19 08:16:33.000000000 +0100
+@@ -136,7 +136,10 @@
+     DebugStream& operator<<( int32_type );
+     DebugStream& operator<<( uint16_type );
+     DebugStream& operator<<( uint32_type );
+-#if defined (__s390x__) || defined( __s390__ ) || defined( __APPLE__ )
++#if defined (__s390x__) || defined( __s390__ ) 
++    DebugStream& operator<<( size_type );
++#endif
++#if defined( __APPLE__ )
+     DebugStream& operator<<( size_type );
+     DebugStream& operator<<( ptrdiff_t );
+ #endif
+@@ -204,7 +207,10 @@
+     NdebugStream& operator<<( int32_type ) { return *this; }
+     NdebugStream& operator<<( uint16_type ) { return *this; }
+     NdebugStream& operator<<( uint32_type ) { return *this; }
+-#if defined (__s390x__) || defined( __s390__ ) || defined( __APPLE__ )
++#if defined (__s390x__) || defined( __s390__ ) 
++    NdebugStream& operator<<( size_type ) { return *this; }
++#endif
++#if defined( __APPLE__ )
+     NdebugStream& operator<<( size_type ) { return *this; }
+     NdebugStream& operator<<( ptrdiff_t ) { return *this; }
+ #endif

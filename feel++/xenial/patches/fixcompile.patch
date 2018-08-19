@@ -1,0 +1,23 @@
+Index: feel++-0.91.0~svn7215/doc/tutorial/CMakeLists.txt
+===================================================================
+--- feel++-0.91.0~svn7215.orig/doc/tutorial/CMakeLists.txt	2011-06-13 18:52:57.000000000 +0200
++++ feel++-0.91.0~svn7215/doc/tutorial/CMakeLists.txt	2011-06-13 18:54:30.000000000 +0200
+@@ -104,7 +104,7 @@
+ 
+ if ( NOT FEEL_MINIMAL_CONFIGURATION )
+ 
+-foreach( docex  myintegrals mymesh geotool myfunctionspace laplacian residualestimator stokes bratu nonlinearpow )
++foreach( docex  myintegrals mymesh geotool myfunctionspace laplacian residualestimator )
+   add_docex( ${docex} )
+ endforeach()
+ 
+@@ -119,7 +119,8 @@
+ message(STATUS "doc tutorial: ${LIST_APPS}")
+ 
+ 
+-IF ( OCTAVE_FOUND )
++#IF ( OCTAVE_FOUND )
++IF ( 0 )
+ 
+ GET_DIRECTORY_PROPERTY(cmake_include_directories INCLUDE_DIRECTORIES)
+ SET(octave_include_dirs)

@@ -1,0 +1,6 @@
+usr/bin/feelpp_toolbox_solid*
+usr/lib/libfeelpp_model_solid*.so
+
+usr/include/feelpp/toolboxes/feel/feelmodels/solid/mechanicalpropertiesdescription.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/solid/solidmecbase.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/solid/solidmechanics.hpp

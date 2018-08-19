@@ -1,0 +1,7 @@
+usr/bin/feelpp_toolbox_fluid*
+usr/lib/libfeelpp_model_fluid*.so
+
+usr/include/feelpp/toolboxes/feel/feelmodels/fluid/densityviscositymodel.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/fluid/dynamicviscositymodel.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/fluid/fluidmecbase.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/fluid/fluidmechanics.hpp

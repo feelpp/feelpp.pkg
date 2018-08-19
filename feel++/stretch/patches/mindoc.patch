@@ -1,0 +1,21 @@
+Index: life-0.9.23/doc/tutorial/CMakeLists.txt
+===================================================================
+--- life-0.9.23.orig/doc/tutorial/CMakeLists.txt	2010-04-23 12:38:03.000000000 +0200
++++ life-0.9.23/doc/tutorial/CMakeLists.txt	2010-04-23 12:39:09.000000000 +0200
+@@ -56,11 +56,12 @@
+  endforeach()
+ endmacro()
+ 
+-foreach( docex myapp mymesh myintegrals laplacian stokes bratu nonlinearpow )
++#foreach( docex myapp mymesh myintegrals laplacian stokes bratu nonlinearpow )
++foreach( docex myapp mymesh myintegrals laplacian  )
+   add_docex( ${docex} )
+ endforeach()
+ 
+ # Natural convection problem
+-include_directories( ${CMAKE_CURRENT_SOURCE_DIR} )
+-add_executable( life_doc_convection convection.hpp convection_other.cpp convection_main.cpp convection_run.cpp convection_residual.cpp convection_jacobian.cpp convection_jacobian1.cpp convection_jacobian2.cpp convection_lo.cpp convection_lo2.cpp )
+-target_link_libraries( life_doc_convection ${LIFE_LIBRARIES} )
++#include_directories( ${CMAKE_CURRENT_SOURCE_DIR} )
++#add_executable( life_doc_convection convection.hpp convection_other.cpp convection_main.cpp convection_run.cpp convection_residual.cpp convection_jacobian.cpp convection_jacobian1.cpp convection_jacobian2.cpp convection_lo.cpp convection_lo2.cpp )
++#target_link_libraries( life_doc_convection ${LIFE_LIBRARIES} )

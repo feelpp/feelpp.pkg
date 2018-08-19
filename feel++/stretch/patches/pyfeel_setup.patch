@@ -1,0 +1,49 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ feel++ (0.103.3+gitcd06f3332-1) unstable; urgency=medium
+ .
+   * new upstream release
+Author: Christophe Trophime <christophe.trophime@lncmi.cnrs.fr>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2017-12-11
+
+Index: feel++-0.103.3+gitb0dd9db00/pyfeelpp/setup.py
+===================================================================
+--- feel++-0.103.3+gitb0dd9db00.orig/pyfeelpp/setup.py
++++ feel++-0.103.3+gitb0dd9db00/pyfeelpp/setup.py
+@@ -6,6 +6,7 @@ import subprocess
+ 
+ from setuptools import setup, Extension
+ from setuptools.command.build_ext import build_ext
++from setuptools.command.install import install
+ from distutils.version import LooseVersion
+ 
+ 
+Index: feel++-0.103.3+gitb0dd9db00/pyfeelpp/CMakeLists.txt
+===================================================================
+--- feel++-0.103.3+gitb0dd9db00.orig/pyfeelpp/CMakeLists.txt
++++ feel++-0.103.3+gitb0dd9db00/pyfeelpp/CMakeLists.txt
+@@ -64,4 +64,6 @@ set(SETUP_PY_IN "${CMAKE_CURRENT_SOURCE_
+ set(SETUP_PY    "${CMAKE_CURRENT_BINARY_DIR}/setup.py")
+ configure_file(${SETUP_PY_IN} ${SETUP_PY})
+ 
+-install(CODE "execute_process(COMMAND ${PYTHON_EXECUTABLE} ${SETUP_PY} install)")
++MESSAGE(STATUS "COMMAND ${PYTHON_EXECUTABLE} ${SETUP_PY} install --root=$ENV{DESTDIR}")
++install(CODE "execute_process(COMMAND ${PYTHON_EXECUTABLE} ${SETUP_PY} install --root=$ENV{DESTDIR} --install-platlib=/usr/lib/python$ENV{PYVER}/dist-packages)")
++#install(CODE "execute_process(COMMAND ${PYTHON_EXECUTABLE} ${SETUP_PY} install)")

@@ -1,0 +1,142 @@
+#!/usr/bin/make -f
+
+DEB_AUTO_CLEANUP_RCS   := yes
+DEB_COMPRESS_EXCLUDE   := .pdf
+
+DEB_BUILD_ARCH := $(shell dpkg-architecture -qDEB_BUILD_ARCH)
+DEB_BUILD_ARCH_OS := $(shell dpkg-architecture -qDEB_BUILD_ARCH_OS)
+DEB_BUILD_GNU_SYSTEM ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_SYSTEM)
+DEB_HOST_MULTIARCH := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+#  # -Wno-undefined-var-template to reduce number of warnings from ginac
+#  # -Wno-inconsistent-missing-override to reduce number of warning due to Paraview and C++11
+# eventually add -O3 -march=native -mtune=native
+# # eventually add -pedantic
+# export DEB_CFLAGS_MAINT_APPEND  = -Wall 
+# export DEB_CXXFLAGS_MAINT_APPEND  = -Wall -Wno-inconsistent-missing-override -Wno-undefined-var-template
+export DEB_CXXFLAGS_MAINT_APPEND  = -Wno-inconsistent-missing-override -Wno-undefined-var-template
+# export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+#
+
+%:
+	dh $@ --buildsystem=cmake --parallel --with python2
+
+export OMPI_MCA_orte_rsh_agent=/bin/false  #workaround to start MPI-applications in chroot
+
+disable_mpi_archs = armel armhf kfreebsd-amd64 kfreebsd-i386 mips mipsel
+export LD_LIBRARY_PATH :=  $(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH):$(LD_LIBRARY_PATH); 
+
+#ifneq ($(wildcard /usr/lib/$(DEB_HOST_MULTIARCH)/hdf5/$(ARCH_DEFAULT_MPI_IMPL)/libhdf5.so),)
+#  HDF5_CPPFLAGS := -I/usr/include/hdf5/$(ARCH_DEFAULT_MPI_IMPL) -DOMPI_SKIP_MPICXX=1 -DMPICH_SKIP_MPICXX=1
+#  HDF5_LDFLAGS := -Wl,-L/usr/lib/$(DEB_HOST_MULTIARCH)/hdf5/$(ARCH_DEFAULT_MPI_IMPL)
+#endif
+
+export PETSC_DIR=/usr/lib/petscdir/3.8.2/$(DEB_HOST_MULTIARCH)-real
+export SLEPC_DIR=/usr/lib/slepcdir/3.8.1/$(DEB_HOST_MULTIARCH)-real
+
+export FEELPP_DIR=$(CURDIR)/feelpp
+export FEELPP_WORKDIR=$(CURDIR)/feelpp
+export PARAVIEW_DIR=/usr/lib/cmake/paraview
+
+export QT_SELECT=qt5
+
+# -DFEELPP_ENABLE_HPDDM=OFF
+
+# ipopt install breaks feelpp
+# -DFEELPP_ENABLE_IPOPT=OFF
+
+# pyfeel install fails
+# for python:
+# -DFEELPP_ENABLE_PYTHON=OFF
+# -DFEELPP_ENABLE_PYTHON_WRAPPING=OFF ??
+# -DFEELPP_ENABLE_PYFEELPP=OFF
+
+DESTDIR:=$(CURDIR)/debian/tmp
+PYVER:=$(shell pyversions -dv)
+## PYVERS=$(shell pyversions -v -r debian/control) $(shell py3versions -v -r)
+
+# ifeq (,$(filter $(PYVER),"3"))
+#     PYCONFIGDIR:=/usr/lib/python${PYVER}/config-${PYVER}m-$(DEB_HOST_MULTIARCH)/libpython${PYVER}.so
+# endif
+PYCONFIGDIR:=/usr/lib/python${PYVER}/config-$(DEB_HOST_MULTIARCH)/libpython${PYVER}.so
+
+NUMJOBS:=$(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS))) 
+
+extra_flags += \
+ -DCMAKE_VERBOSE_MAKEFILE=ON \
+ -DCMAKE_BUILD_TYPE=Release \
+ -DHDF5_INCLUDE_DIRS=/usr/include/hdf5-1.8/$(ARCH_DEFAULT_MPI_IMPL) \
+ -DHDF5_LIBRARY_DIRS=/usr/lib/$(DEB_HOST_MULTIARCH)/hdf5-1.8/$(ARCH_DEFAULT_MPI_IMPL) \
+ -DPYTHON_EXECUTABLE:FILEPATH=/usr/bin/python$(PYVER) \
+ -DPYTHON_INCLUDE_DIR:PATH=/usr/include/python$(PYVER) \
+ -DPYTHON_LIBRARY:PATH=$(PYCONFIGDIR) \
+ -DFEELPP_ENABLE_MED=ON \
+ -DFEELPP_ENABLE_PARALUTION=OFF \
+ -DFEELPP_ENABLE_TOOLBOXES=OFF \
+ -DFEELPP_ENABLE_IPOPT=OFF \
+ -DFEELPP_ENABLE_TESTS=OFF \
+ -DFEELPP_PYTHON_VERSION=2 \
+ -DFEELPP_ENABLE_PYTHON=ON \
+ -DFEELPP_ENABLE_PYTHON_WRAPPING=ON \
+ -DFEELPP_ENABLE_PYFEELPP=OFF
+
+ifeq (,$(filter $(DEB_HOST_ARCH),sparc))
+ifeq (,$(filter $(DEB_HOST_ARCH),powerpc))	
+extra_flags+=\
+		-DCMAKE_C_COMPILER=/usr/bin/clang-5.0 \
+		-DCMAKE_CXX_COMPILER=/usr/bin/clang++-5.0
+else
+extra_flags+=\
+		-DCMAKE_C_COMPILER=/usr/bin/clang-5.0 \
+		-DCMAKE_CXX_COMPILER=/usr/bin/clang++-5.0
+endif
+else
+extra_flags+=\
+		-DCMAKE_C_COMPILER=/usr/bin/gcc \
+		-DCMAKE_CXX_COMPILER=/usr/bin/g++
+endif
+
+extra_flags += \
+ -DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,--no-as-needed -lm -lrt"
+
+override_dh_auto_clean:
+	echo "dh-auto_clean: Python detected $(PYVER) CONFIG: $(PYCONFIGDIR)"
+	if [ -d toolboxes.orig ]; then mv toolboxes.orig toolboxes; fi
+	if [ -d cmake/modules/FindEigen3.cmake.orig ]; then mv cmake/modules/FindEigen3.cmake.orig cmake/modules/FindEigen3.cmake; fi
+
+override_dh_auto_configure:
+	echo "Python detected $(PYVER) CONFIG: $(PYCONFIGDIR)"
+	mv toolboxes toolboxes.orig
+	mv cmake/modules/FindEigen3.cmake cmake/modules/FindEigen3.cmake.orig
+	dh_auto_configure -- $(extra_flags)
+
+override_dh_auto_install:
+	# pb with pyfeel setup.py
+	# cd obj-$(DEB_HOST_MULTIARCH) && make -j$(NUMJOBS) install DESTDIR=$(CURDIR)/debian/tmp
+	echo "Install "
+	dh_auto_install
+	echo "Install applications/mesh"
+	dh_auto_install -- -C applications/mesh # to force build mesh apps
+	dh_install --list-missing
+	# Quick and dirty hack to fix nlop lib
+	dh_link -p libfeel++1 usr/lib/$(DEB_HOST_MULTIARCH)/libfeelpp_nlopt.so.0.9.0 usr/lib/libfeelpp_nlopt.so.0.9.0
+	dh_link -p libfeel++-dev  usr/lib/$(DEB_HOST_MULTIARCH)/libfeelpp_nlopt.so usr/lib/libfeelpp_nlopt.so
+
+override_dh_auto_build:
+	# echo "skip build"
+	dh_auto_build -- feelpp # to only build base libs
+	# dh_auto_build -- -k testsuite #  testsuite removed from arch since 0.103.0
+	dh_auto_build -- -C applications/mesh # to force build mesh apps
+	# rm titi
+
+# tstsuite has been removed from arch since 0.103.1
+override_dh_auto_test:
+	echo "Do not Running tests"
+	#echo "Running tests"
+	#MPIEXEC="mpiexec --allow-run-as-root --oversubscribe -np " dh_auto_test 
+
+override_dh_shlibdeps:
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
+
+get-orig-source:
+	uscan --force-download

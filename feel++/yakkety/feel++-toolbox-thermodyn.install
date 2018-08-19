@@ -1,0 +1,6 @@
+usr/bin/feelpp_toolbox_thermodyn*
+usr/lib/libfeelpp_model_thermodyn*.so
+
+usr/include/feelpp/toolboxes/feel/feelmodels/thermodyn/thermalpropertiesdescription.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/thermodyn/thermodynamics.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/thermodyn/thermodynbase.hpp

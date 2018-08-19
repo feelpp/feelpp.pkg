@@ -1,0 +1,13 @@
+Index: life-0.9.24/CMakeLists.txt
+===================================================================
+--- life-0.9.24.orig/CMakeLists.txt	2010-06-05 11:37:24.000000000 +0200
++++ life-0.9.24/CMakeLists.txt	2010-06-05 11:37:30.000000000 +0200
+@@ -2,7 +2,7 @@
+ 
+ SET(CMAKE_CXX_FLAGS "-std=c++0x" CACHE STRING "Default flags" FORCE)
+ SET(CMAKE_CXX_FLAGS_DEBUG "-std=c++0x -g" CACHE STRING "Debug flags" FORCE)
+-SET(CMAKE_CXX_FLAGS_RELEASE "-std=c++0x -O3 -DNDEBUG" CACHE STRING "Release flags" FORCE)
++SET(CMAKE_CXX_FLAGS_RELEASE "-std=c++0x -O2 -DNDEBUG" CACHE STRING "Release flags" FORCE)
+ 
+ 
+ LIST(REMOVE_DUPLICATES CMAKE_CXX_FLAGS)
