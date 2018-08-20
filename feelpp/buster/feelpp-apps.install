@@ -1,4 +1,4 @@
-debian/tmp/usr/bin/feelpp_qs*        /usr/bin
+debian/tmp/usr/bin/        /usr/bin
 #debian/tmp/usr/bin/feelpp_mesh*        /usr/bin
 #debian/tmp/usr/bin/feelpp_ls*        /usr/bin
 #debian/tmp/usr/share/*      /usr/share
