@@ -24,15 +24,17 @@ export DEB_CXXFLAGS_MAINT_APPEND  = -Wno-inconsistent-missing-override -Wno-unde
 NUMJOBS:=$(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS))) 
 
 extra_flags += \
- -DCMAKE_C_COMPILER=/usr/bin/clang-6.0 \
- -DCMAKE_CXX_COMPILER=/usr/bin/clang++-6.0\
+ -DCMAKE_C_COMPILER=/usr/bin/clang-8 \
+ -DCMAKE_CXX_COMPILER=/usr/bin/clang++-8\
  -DCMAKE_VERBOSE_MAKEFILE=ON \
  -DCMAKE_BUILD_TYPE=Release \
  -DFEELPP_PYTHON_VERSION=3 \
  -DFEELPP_ENABLE_PYTHON=ON \
  -DFEELPP_ENABLE_VTK=OFF \
  -DFEELPP_ENABLE_TOOLBOXES=OFF \
- -DFEELPP_ENABLE_TESTS=OFF 
+ -DFEELPP_ENABLE_TESTS=OFF \
+ -DLIBBSON_DIR=/usr \
+ -DLIBMONGOC_DIR=/usr
 
 extra_flags += \
  -DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,--no-as-needed -lm -lrt"

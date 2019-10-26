@@ -1,3 +1,9 @@
+feelpp (0.107.0-alpha.1+git6f36d3059-1buster) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Christophe Prud'homme <christophe.prudhomme@feelpp.org>  Sat, 26 Oct 2019 21:20:20 +0200
+
 feelpp (0.106.0-alpha.2+20180819.gitf199d81b7-1) unstable; urgency=medium
 
   * new upstream release
