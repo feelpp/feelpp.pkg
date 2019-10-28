@@ -3,10 +3,9 @@ Name: Feel++
 Maintainer: Christophe Prud'homme <christophe.prudhomme@feelpp.org>
 
 
-Source: http://ljkforge.imag.fr/feel
+Source: http://github.comm/feelpp/feelpp
 
-Copyright: 2004-2013, Christophe Prud'homme
-	   2011-2013, Universite de Strasbourg
+Copyright: 2011-2019, Universite de Strasbourg
 	   2004-2006, Ecole Polytechnique Federale de Lausanne
 	   2006-2012, Universite Joseph Fourier (Grenoble 1)
 	   2008-2012, University of Coimbra
