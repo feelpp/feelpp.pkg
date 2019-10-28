@@ -50,7 +50,6 @@ Package: libfeelpp1
 Section: libs
 Architecture: amd64 i386 ia64 powerpc sparc
 Depends: ${shlibs:Depends}, ${misc:Depends}, libgmsh4
-Replaces: liblife
 Description: A library for the finite element method
  Provides the dynamic Feel++ libraries.
  .
@@ -89,15 +88,14 @@ Section: libdevel
 Architecture: amd64 i386 ia64 powerpc sparc
 Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp1 (= ${binary:Version}),
 	 libboost1.67-all-dev, 
-	 mpi-default-dev, mpi-default-bin, libgmsh-tetgen-dev,
+	 mpi-default-dev, mpi-default-bin, libgmsh-dev,
 	 libeigen3-dev, libcln-dev,
-	 libpetsc-real3.9-dev,
-     libslepc-real3.9-dev,
+	 libpetsc-real3.11-dev,
+     libslepc-real3.11-dev,
 	 libxml2-dev, libtbb-dev [amd64 i386],
-     libopenturns-dev, libann-dev, libglpk-dev,
+     libann-dev, libglpk-dev,
      libmongoc-dev
 Suggests: feelpp-doc, libfeelpp-dbg, doxygen, cmake, cmake-curses-gui
-Replaces: liblife-dev
 Description: A library for the finite element method
  Provides the header files and static libraries.
  .
@@ -134,7 +132,6 @@ Package: libfeelpp-dbg
 Section: debug
 Architecture: amd64 i386 ia64 powerpc sparc
 Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp-dev, libtbb2-dbg [amd64 i386]
-Replaces: liblife-dbg
 Description: A library for the finite element method
  Feel++ is a versatile finite element library to solve partial
  differential equations
@@ -168,7 +165,7 @@ Description: A library for the finite element method
 Package: feelpp-tools
 Section: science
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), libfeelpp-dev (= ${binary:Version}), gmsh
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), gmsh
 Description: A library for the finite element method
  Provides some applications codes(source and executables) such
  as laplacian with cG and dG methods, stokes, heat transfer, solid
@@ -206,7 +203,8 @@ Description: A library for the finite element method
 Package: feelpp-quickstart
 Section: science
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), libfeelpp-dev (= ${binary:Version}), feelpp-tools
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version})
+Recommends: feelpp-tools, feelpp-data
 Description: A library for the finite element method
  Provides some applications codes(source and executables) such
  as laplacian with cG and dG methods, stokes, heat transfer, solid
