@@ -1,6 +1,3 @@
 usr/lib/*/libfeelpp*.so
-
-# usr/include/feel
 usr/include/feelpp
-
-usr/share/feelpp
+usr/share/feelpp/feel

@@ -1,0 +1,5 @@
+usr/bin/feelpp_mesh*
+usr/bin/feelpp_remote*
+usr/bin/feelpp_screen*
+usr/share/man/man1/feelpp_mesh*
+usr/share/man/man1/feelpp_remote*
