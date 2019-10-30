@@ -1,3 +1,15 @@
+feelpp (0.107.0~alpha.1+gita75a0ef12-5) unstable; urgency=medium
+
+  * libfeelpp1,libfeelpp-dev: really fix kwsys shared lib versioning
+
+ -- Christophe Prud'homme <christophe.prudhomme@feelpp.org>  Mon, 28 Oct 2019 19:18:04 +0100
+
+feelpp (0.107.0~alpha.1+gita75a0ef12-4) unstable; urgency=medium
+
+  * upstream: Fix upstream kwsys and metis shared libs
+
+ -- Christophe Prud'homme <christophe.prudhomme@feelpp.org>  Mon, 28 Oct 2019 14:59:22 +0100
+
 feelpp (0.107.0~alpha.1+gita75a0ef12-3) unstable; urgency=medium
 
   * feelpp-tools: fix Depends 

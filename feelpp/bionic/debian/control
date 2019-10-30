@@ -4,14 +4,14 @@ Priority: extra
 Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
 Uploaders: Christophe Prud'homme <prudhomm@debian.org>
 Build-Depends: quilt, debhelper (>= 10),
-           cmake (>=3.12.0),
+           cmake (>=3.10.0),
            clang-8,
            dh-python,
            python3, python3-dev, python3-setuptools, python3-sympy,
 	       chrpath,
-	       libboost1.67-all-dev, 
+	       libboost1.65-all-dev, 
            libcln-dev,
-           libpetsc-real-dev,
+           libpetsc3.7.7-dev,
            slepc-dev,
            libhdf5-openmpi-dev,
            libnlopt-dev,
@@ -49,7 +49,7 @@ Vcs-Browser: http://svn.debian.org/wsvn/debian-science/packages/feel++/trunk
 Package: libfeelpp1
 Section: libs
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libgmsh4
+Depends: ${shlibs:Depends}, ${misc:Depends}, g++, libgmsh3, python3-sympy
 Description: A library for the finite element method
  Provides the dynamic Feel++ libraries.
  .
@@ -87,14 +87,15 @@ Package: libfeelpp-dev
 Section: libdevel
 Architecture: amd64 i386 ia64 powerpc sparc
 Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp1 (= ${binary:Version}),
-	 libboost1.67-all-dev, 
+	 libboost1.65-all-dev, 
 	 mpi-default-dev, mpi-default-bin, libgmsh-dev,
 	 libeigen3-dev, libcln-dev,
-	 libpetsc-real3.11-dev,
-     libslepc-real3.11-dev,
+	 libpetsc3.7.7-dev,
+         slepc-dev,
 	 libxml2-dev, libtbb-dev [amd64 i386],
      libann-dev, libglpk-dev,
      libmongoc-dev
+Recommends: clang-8     
 Suggests: feelpp-doc, libfeelpp-dbg, doxygen, cmake, cmake-curses-gui
 Description: A library for the finite element method
  Provides the header files and static libraries.

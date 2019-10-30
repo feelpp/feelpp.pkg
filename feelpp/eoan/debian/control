@@ -49,7 +49,7 @@ Vcs-Browser: http://svn.debian.org/wsvn/debian-science/packages/feel++/trunk
 Package: libfeelpp1
 Section: libs
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libgmsh4
+Depends: ${shlibs:Depends}, ${misc:Depends}, g++, libgmsh4, python3-sympy
 Description: A library for the finite element method
  Provides the dynamic Feel++ libraries.
  .
@@ -95,6 +95,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp1 (= ${bi
 	 libxml2-dev, libtbb-dev [amd64 i386],
      libann-dev, libglpk-dev,
      libmongoc-dev
+Recommends: clang-8
 Suggests: feelpp-doc, libfeelpp-dbg, doxygen, cmake, cmake-curses-gui
 Description: A library for the finite element method
  Provides the header files and static libraries.
