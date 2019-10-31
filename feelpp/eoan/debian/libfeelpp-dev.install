@@ -1,3 +1,15 @@
 usr/lib/*/libfeelpp*.so
-usr/include/feelpp
+usr/include/feelpp/bsoncxx
+usr/include/feelpp/contrib
+usr/include/feelpp/eigen
+usr/include/feelpp/feel
+usr/include/feelpp/feelpp_kwsys
+usr/include/feelpp/gflags
+usr/include/feelpp/ginac
+usr/include/feelpp/glog
+usr/include/feelpp/gmsh
+usr/include/feelpp/metis
+usr/include/feelpp/mongocxx
+usr/include/feelpp/nlopt
+usr/include/feelpp/pybind11
 usr/share/feelpp/feel
