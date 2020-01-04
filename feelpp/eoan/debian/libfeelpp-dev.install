@@ -7,7 +7,6 @@ usr/include/feelpp/feelpp_kwsys
 usr/include/feelpp/gflags
 usr/include/feelpp/ginac
 usr/include/feelpp/glog
-usr/include/feelpp/gmsh
 usr/include/feelpp/metis
 usr/include/feelpp/mongocxx
 usr/include/feelpp/nlopt
