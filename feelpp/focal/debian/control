@@ -95,7 +95,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp1 (= ${bi
 	 libxml2-dev, libtbb-dev [amd64 i386],
      libann-dev, libglpk-dev,
      libmongoc-dev
-Recommends: clang-8
+Recommends: clang-9
 Suggests: feelpp-doc, libfeelpp-dbg, doxygen, cmake, cmake-curses-gui
 Description: A library for the finite element method
  Provides the header files and static libraries.
