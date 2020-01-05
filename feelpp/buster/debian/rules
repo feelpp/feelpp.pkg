@@ -41,7 +41,6 @@ extra_flags += \
 
 override_dh_auto_configure:
 	dh_auto_configure -- $(extra_flags)
-	-make gmsh_get_files
 
 override_dh_auto_test:
 	echo "no testsuite"
