@@ -164,11 +164,10 @@ Description: A library for the finite element method
  Provide a language embedded in C++ for variational formulations,
  projection and numerical integration
 
-Package: feelpp-apps
+Package: feelpp-tools
 Section: science
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), libfeelpp-dev (= ${binary:Version}), gmsh
-Replaces: life-apps
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), gmsh
 Description: A library for the finite element method
  Provides some applications codes(source and executables) such
  as laplacian with cG and dG methods, stokes, heat transfer, solid
@@ -202,6 +201,57 @@ Description: A library for the finite element method
  .
  Provide a language embedded in C++ for variational formulations,
  projection and numerical integration
+
+Package: feelpp-quickstart
+Section: science
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version})
+Recommends: feelpp-tools, feelpp-data
+Description: A library for the finite element method
+ Provides some applications codes(source and executables) such
+ as laplacian with cG and dG methods, stokes, heat transfer, solid
+ mechanics(static and dynamic).
+ .
+ Feel++ is a versatile finite element library to solve partial
+ differential equations
+ .
+ Support 1D, 2D, 3D
+ .
+ Support the following basic entities: simplices (segment, triangle,
+ tetrahedron) and product of simplices (quadrangle, hexahedron)
+ .
+ Support various point sets on these basic entities: equispaced
+ points, quadrature points, interpolation points (Gauss-Lobatto,
+ Fekete, WarpBlend?)
+ .
+ Support continuous and discontinuous Galerkin methods
+ .
+ Support various polynomial sets:
+ .
+  * Lagrange(continuous,discontinuous,all dimensions,all interpolation
+ point sets)
+ .
+  * Dubiner(discontinuous), boundary adapted(continuous)
+ .
+  * Legendre(discontinuous), boundary adapted(continuous)
+ .
+ Provide mathematical concept for higher order abstraction (Function
+ spaces and associated elements, forms and operators)
+ .
+ Provide a language embedded in C++ for variational formulations,
+ projection and numerical integration
+
+Package: feelpp-data
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Description: Data files for the library Feel++ 
+ Provides data files for the Feel++ library
+ .
+  * testcases for quickstart
+ .
+  * geometry and mesh files
+
 
 # Package: python-feelpp
 # Section: python
