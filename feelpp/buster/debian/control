@@ -48,8 +48,7 @@ Vcs-Browser: http://svn.debian.org/wsvn/debian-science/packages/feel++/trunk
 Package: libfeelpp1
 Section: libs
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, gmsh
-Replaces: liblife
+Depends: ${shlibs:Depends}, ${misc:Depends}, gmsh, g++
 Description: A library for the finite element method
  Provides the dynamic Feel++ libraries.
  .
@@ -95,8 +94,8 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp1 (= ${bi
 	 libxml2-dev, libtbb-dev [amd64 i386],
      libopenturns-dev, libann-dev, libglpk-dev,
      libmongoc-dev
+Recommends: clang-7     
 Suggests: feelpp-doc, libfeelpp-dbg, doxygen, cmake, cmake-curses-gui
-Replaces: liblife-dev
 Description: A library for the finite element method
  Provides the header files and static libraries.
  .
@@ -133,7 +132,6 @@ Package: libfeelpp-dbg
 Section: debug
 Architecture: amd64 i386 ia64 powerpc sparc
 Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp-dev, libtbb2-dbg [amd64 i386]
-Replaces: liblife-dbg
 Description: A library for the finite element method
  Feel++ is a versatile finite element library to solve partial
  differential equations
@@ -206,7 +204,7 @@ Package: feelpp-quickstart
 Section: science
 Architecture: amd64 i386 ia64 powerpc sparc
 Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version})
-Recommends: feelpp-tools, feelpp-data
+Recommends: feelpp-tools, feelpp-data, python3-sympy
 Description: A library for the finite element method
  Provides some applications codes(source and executables) such
  as laplacian with cG and dG methods, stokes, heat transfer, solid
