@@ -12,3 +12,12 @@ usr/include/feelpp/mongocxx
 usr/include/feelpp/nlopt
 usr/include/feelpp/pybind11
 usr/share/feelpp/feel
+usr/share/feelpp/docker
+usr/share/feelpp/eigen
+usr/share/feelpp/feelpp_gflags
+usr/share/feelpp/glog
+usr/share/feelpp/hana
+usr/share/feelpp/lsan
+usr/share/feelpp/nlopt
+usr/share/feelpp/scripts
+
