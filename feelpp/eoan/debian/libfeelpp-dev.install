@@ -6,14 +6,15 @@ usr/include/feelpp/contrib
 usr/include/feelpp/eigen
 usr/include/feelpp/feel
 usr/include/feelpp/feelpp_kwsys
+usr/include/feelpp/fmilib
 usr/include/feelpp/gflags
 usr/include/feelpp/ginac
 usr/include/feelpp/glog
+usr/include/feelpp/hana
 usr/include/feelpp/metis
 usr/include/feelpp/mongocxx
 usr/include/feelpp/nlopt
 usr/include/feelpp/pybind11
-usr/include/feelpp/fmilib
 usr/share/feelpp/feel
 usr/share/feelpp/docker
 usr/share/feelpp/feelpp_gflags
