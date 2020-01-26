@@ -1,9 +1,9 @@
-Source: feelpp
+Source: feelpp-toolboxes
 Section: science
 Priority: extra
 Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
 Uploaders: Christophe Prud'homme <prudhomm@debian.org>
-Build-Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp-dev (= ${binary:Version})
+Build-Depends: mpi-default-dev, clang-9, libfeelpp-dev (= ${binary:Version})
 Standards-Version: 3.9.4
 X-Python-Version: current
 Homepage: http://www.feelpp.org
