@@ -1,5 +1,5 @@
 usr/lib/*/libfeelpp*.so
-usr/lib/*/libfeelpp*.a
+usr/lib/libfeelpp*.a
 usr/include/feelpp/bsoncxx
 usr/include/feelpp/contrib
 usr/include/feelpp/eigen
