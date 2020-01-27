@@ -1,6 +1,10 @@
 usr/lib/*/libfeelpp*.so
-usr/lib/*/lib*.a
 usr/lib/lib*.a
+usr/lib/*/libfmicapi.a
+usr/lib/*/libfmixml.a
+usr/lib/*/libfmizip.a
+usr/lib/*/libjmutils.a
+usr/lib/*/libminizip.a
 usr/include/feelpp/bsoncxx
 usr/include/feelpp/contrib
 usr/include/feelpp/eigen
