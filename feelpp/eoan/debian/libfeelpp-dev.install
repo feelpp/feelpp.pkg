@@ -1,4 +1,16 @@
-usr/lib/*/libfeelpp*.so
+usr/lib/libfeelpp_bsoncxx.so
+usr/lib/libfeelpp_fmilib.so
+usr/lib/libfeelpp_gflags.so
+usr/lib/libfeelpp_gflags_nothreads.so
+usr/lib/libfeelpp_ginac.so
+usr/lib/libfeelpp_glog.so
+usr/lib/libfeelpp_kwsys.so
+usr/lib/libfeelpp_metis.so
+usr/lib/libfeelpp_minizip.so
+usr/lib/libfeelpp_mongocxx.so
+usr/lib/libfeelpp_nlopt.so
+usr/lib/libfeelpp_z.so
+usr/lib/libfeelpp.so
 usr/lib/lib*.a
 usr/lib/*/lib*.a
 usr/include/feelpp/bsoncxx
