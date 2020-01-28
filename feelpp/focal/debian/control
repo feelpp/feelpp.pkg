@@ -91,7 +91,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp1 (= ${bi
 	 mpi-default-dev, mpi-default-bin, libgmsh-dev,
 	 libeigen3-dev, libcln-dev,
 	 petsc-dev,
-     libslepc-real3.11-dev,
+         slepc-dev,
 	 libxml2-dev, libtbb-dev [amd64 i386],
      libann-dev, libglpk-dev,
      libmongoc-dev
