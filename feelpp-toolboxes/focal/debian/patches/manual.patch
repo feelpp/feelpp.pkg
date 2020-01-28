@@ -1,0 +1,15 @@
+Index: feel++-0.91.0~svn7013/doc/tutorial/feel-manual.tex
+===================================================================
+--- feel++-0.91.0~svn7013.orig/doc/tutorial/feel-manual.tex	2011-04-26 05:53:20.000000000 +0200
++++ feel++-0.91.0~svn7013/doc/tutorial/feel-manual.tex	2011-04-26 05:53:47.000000000 +0200
+@@ -4,7 +4,9 @@
+ 
+ \usepackage{a4wide}
+ \usepackage[utf8]{inputenc}
+-%\usepackage[T1]{fontenc}
++\usepackage[T1]{fontenc}
++\usepackage{textcomp}
++\usepackage{lmodern}
+ %%\usepackage{fullpage}
+ \usepackage{longtable}
+ 
