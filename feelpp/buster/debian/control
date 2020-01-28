@@ -11,7 +11,7 @@ Build-Depends: quilt, debhelper (>= 9),
 	       chrpath,
 	       libboost1.67-all-dev, 
            libcln-dev,
-           libpetsc-real3.10-dev,
+           petsc-dev,
            slepc-dev,
            libhdf5-openmpi-dev,
            libnlopt-dev,
@@ -89,11 +89,11 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp1 (= ${bi
 	 libboost1.67-all-dev, 
 	 mpi-default-dev, mpi-default-bin, libgmsh-tetgen-dev,
 	 libeigen3-dev, libcln-dev,
-	 libpetsc-real3.9-dev,
-     libslepc-real3.9-dev,
+	 petsc-dev,
+         slepc-dev,
 	 libxml2-dev, libtbb-dev [amd64 i386],
-     libopenturns-dev, libann-dev, libglpk-dev,
-     libmongoc-dev
+         libann-dev, libglpk-dev,
+         libmongoc-dev
 Recommends: clang-7     
 Suggests: feelpp-doc, libfeelpp-dbg, doxygen, cmake, cmake-curses-gui
 Description: A library for the finite element method
