@@ -43,7 +43,6 @@ Homepage: http://www.feelpp.org
 Vcs-Svn: svn://svn.debian.org/svn/debian-science/packages/feel++/trunk
 Vcs-Browser: http://svn.debian.org/wsvn/debian-science/packages/feel++/trunk
 
-
 Package: libfeelpp-toolboxes1
 Section: libs
 Architecture: amd64 i386 ia64 powerpc sparc
