@@ -62,6 +62,14 @@ Package: feelpp-toolboxes
 Section: science
 Architecture: amd64 i386 ia64 powerpc sparc
 Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1
+Recommends: feelpp-toolboxes-data
 Description: Feel++ toolboxes
  Provides Feel++ toolboxes
+
+Package: feelpp-toolboxes-data
+Section: science
+Architecture: all
+Depends: ${misc:Depends}
+Description: Feel++ toolboxes data
+ Provides Feel++ toolboxes data
 
