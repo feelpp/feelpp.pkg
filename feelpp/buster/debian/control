@@ -33,7 +33,7 @@ Build-Depends: quilt, debhelper (>= 9),
            python-pymongo,
            ruby-progressbar,
            ruby-tilt,
-           asciidoctor,
+           asciidoctor,ruby-asciidoctor-pdf,
            libglew-dev
 # add pybind11-dev, python[3]-pybind11
 # for linking with paraview: libglew-dev
