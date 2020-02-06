@@ -34,7 +34,7 @@ Build-Depends: quilt, debhelper (>= 10),
            python-pymongo,
            ruby-progressbar,
            ruby-tilt,
-           asciidoctor,
+           asciidoctor,asciidoctor-pdf,
            libglew-dev,
            libfeelpp-dev
 Standards-Version: 3.9.4
@@ -43,25 +43,39 @@ Homepage: http://www.feelpp.org
 Vcs-Svn: svn://svn.debian.org/svn/debian-science/packages/feel++/trunk
 Vcs-Browser: http://svn.debian.org/wsvn/debian-science/packages/feel++/trunk
 
-Package: libfeelpp-toolboxes1
+Package: libfeelpp-toolboxes1-g1
 Section: libs
 Architecture: amd64 i386 ia64 powerpc sparc
 Depends: libfeelpp1 
-Description: Feel++ toolboxes libraries
+Description: Feel++ toolboxes libraries G1
+Provides Feel++ toolboxes libraries
+
+Package: libfeelpp-toolboxes1-g2
+Section: libs
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: libfeelpp1 
+Description: Feel++ toolboxes libraries G2
+Provides Feel++ toolboxes libraries
+
+Package: libfeelpp-toolboxes1
+Section: libs
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: libfeelpp-toolboxes1-g1 (= ${binary:Version}), libfeelpp-toolboxes1-g2 (= ${binary:Version})
+Description: Feel++ toolboxes libraries 
  Provides Feel++ toolboxes libraries
 
 
 Package: libfeelpp-toolboxes-dev
 Section: libdevel
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: libfeelpp-toolboxes1, libfeelpp-dev 
+Depends: libfeelpp-toolboxes1 (= ${binary:Version}), libfeelpp-dev 
 Description: Development files for Feel++ toolboxes
  Provides the header files and static libraries.
 
 Package: feelpp-toolboxes
 Section: science
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1 (= ${binary:Version})
 Recommends: feelpp-toolboxes-data
 Description: Feel++ toolboxes
  Provides Feel++ toolboxes
