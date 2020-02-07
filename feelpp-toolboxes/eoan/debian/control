@@ -48,21 +48,21 @@ Section: libs
 Architecture: amd64 i386 ia64 powerpc sparc
 Depends: libfeelpp1 
 Description: Feel++ toolboxes model libraries 
-Provides Feel++ toolboxes model libraries
+ Provides Feel++ toolboxes model libraries
 
 Package: libfeelpp-toolboxes1-g1
 Section: libs
 Architecture: amd64 i386 ia64 powerpc sparc
 Depends: libfeelpp1 
 Description: Feel++ toolboxes libraries G1
-Provides Feel++ toolboxes G1 libraries
+ Provides Feel++ toolboxes G1 libraries
 
 Package: libfeelpp-toolboxes1-g2
 Section: libs
 Architecture: amd64 i386 ia64 powerpc sparc
 Depends: libfeelpp1 
 Description: Feel++ toolboxes libraries G2
-Provides Feel++ toolboxes G2 libraries
+ Provides Feel++ toolboxes G2 libraries
 
 Package: libfeelpp-toolboxes1
 Section: libs
