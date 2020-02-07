@@ -87,7 +87,7 @@ Section: libdevel
 Architecture: amd64 i386 ia64 powerpc sparc
 Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp1 (= ${binary:Version}),
 	 libboost1.67-all-dev, 
-	 mpi-default-dev, mpi-default-bin, libgmsh-tetgen-dev,
+	 mpi-default-dev, mpi-default-bin, 
 	 libeigen3-dev, libcln-dev,
 	 petsc-dev,
          slepc-dev,
