@@ -1,0 +1,95 @@
+Source: feelpp-toolboxes
+Section: science
+Priority: extra
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Christophe Prud'homme <prudhomm@debian.org>
+Build-Depends: quilt, debhelper (>= 9),
+           cmake (>=3.13.0),
+           clang-7,
+           dh-python,
+           python3, python3-dev, python3-setuptools, python3-sympy,
+	       chrpath,
+	       libboost1.67-all-dev, 
+           libcln-dev,
+           petsc-dev,
+           slepc-dev,
+           libhdf5-openmpi-dev,
+           libnlopt-dev,
+           libgsl-dev,
+           libnetcdf-dev, libgl2ps-dev, libglu1-mesa-dev, libsm-dev, libxt-dev,
+           libfftw3-mpi-dev,
+	       libxml2-dev,
+	       wget, libgmsh-dev, gmsh,
+	       bison,flex,
+	       doxygen, doxygen-latex,
+	       transfig,imagemagick,
+	       libtbb-dev[amd64 i386],
+	       libann-dev, libglpk-dev,
+           libbz2-dev,
+           libbson-dev,
+           libmongoc-dev,
+           mongo-tools,
+           libmongoclient-dev,           
+           python-pymongo,
+           ruby-progressbar,
+           ruby-tilt,
+           asciidoctor,ruby-asciidoctor-pdf,
+           libglew-dev,
+           libfeelpp-dev
+Standards-Version: 3.9.4
+X-Python-Version: current
+Homepage: http://www.feelpp.org
+Vcs-Svn: svn://svn.debian.org/svn/debian-science/packages/feel++/trunk
+Vcs-Browser: http://svn.debian.org/wsvn/debian-science/packages/feel++/trunk
+
+Package: libfeelpp-toolboxes1-model
+Section: libs
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: libfeelpp1 
+Description: Feel++ toolboxes model libraries 
+ Provides Feel++ toolboxes model libraries
+
+Package: libfeelpp-toolboxes1-g1
+Section: libs
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: libfeelpp1 
+Description: Feel++ toolboxes libraries G1
+ Provides Feel++ toolboxes G1 libraries
+
+Package: libfeelpp-toolboxes1-g2
+Section: libs
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: libfeelpp1 
+Description: Feel++ toolboxes libraries G2
+ Provides Feel++ toolboxes G2 libraries
+
+Package: libfeelpp-toolboxes1
+Section: libs
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: libfeelpp-toolboxes1-model (= ${binary:Version}), libfeelpp-toolboxes1-g1 (= ${binary:Version}), libfeelpp-toolboxes1-g2 (= ${binary:Version})
+Description: Feel++ toolboxes libraries 
+ Provides Feel++ toolboxes libraries
+
+
+Package: libfeelpp-toolboxes-dev
+Section: libdevel
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: libfeelpp-toolboxes1 (= ${binary:Version}), libfeelpp-dev 
+Description: Development files for Feel++ toolboxes
+ Provides the header files and static libraries.
+
+Package: feelpp-toolboxes
+Section: science
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1 (= ${binary:Version})
+Recommends: feelpp-toolboxes-data
+Description: Feel++ toolboxes
+ Provides Feel++ toolboxes
+
+Package: feelpp-toolboxes-data
+Section: science
+Architecture: all
+Depends: ${misc:Depends}
+Description: Feel++ toolboxes data
+ Provides Feel++ toolboxes data
+
