@@ -23,6 +23,7 @@ export DEB_CXXFLAGS_MAINT_APPEND  = -Wno-inconsistent-missing-override -Wno-unde
 
 NUMJOBS:=$(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS))) 
 
+DEB_CXXFLAGS_SET=
 export CXXFLAGS=
 
 extra_flags += \
