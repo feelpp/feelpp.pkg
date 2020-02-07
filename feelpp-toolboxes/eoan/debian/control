@@ -34,7 +34,7 @@ Build-Depends: quilt, debhelper (>= 10),
            python-pymongo,
            ruby-progressbar,
            ruby-tilt,
-           asciidoctor,asciidoctor-pdf,
+           asciidoctor, ruby-asciidoctor-pdf,
            libglew-dev,
            libfeelpp-dev
 Standards-Version: 3.9.4
