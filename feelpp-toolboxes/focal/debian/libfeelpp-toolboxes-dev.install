@@ -1,3 +1,4 @@
 usr/lib/*/libfeelpp*.so
 usr/include/feelpp/
-usr/share/feelpp/
+usr/share/feelpp/toolboxes
+
