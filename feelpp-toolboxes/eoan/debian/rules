@@ -8,6 +8,9 @@ DEB_BUILD_ARCH_OS := $(shell dpkg-architecture -qDEB_BUILD_ARCH_OS)
 DEB_BUILD_GNU_SYSTEM ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_SYSTEM)
 DEB_HOST_MULTIARCH := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
+export DEB_CXXFLAGS_SET="-O2"
+
+
 #  # -Wno-undefined-var-template to reduce number of warnings from ginac
 #  # -Wno-inconsistent-missing-override to reduce number of warning due to Paraview and C++11
 # eventually add -O3 -march=native -mtune=native
@@ -23,15 +26,12 @@ export DEB_CXXFLAGS_MAINT_APPEND  = -Wno-inconsistent-missing-override -Wno-unde
 
 NUMJOBS:=$(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS))) 
 
-DEB_CXXFLAGS_SET=
-export CXXFLAGS=
 
 extra_flags += \
 -DCMAKE_C_COMPILER=/usr/bin/clang-8 \
 -DCMAKE_CXX_COMPILER=/usr/bin/clang++-8\
 -DCMAKE_VERBOSE_MAKEFILE=ON \
--DCMAKE_BUILD_TYPE=Release \
--DCMAKE_CXX_FLAGS="-O2" \
+-DCMAKE_BUILD_TYPE=None \
 -DFEELPP_TOOLBOXES_ENABLE=ON \
 -DFEELPP_TOOLBOXES_ENABLE_MESHALE=ON \
 -DFEELPP_TOOLBOXES_ENABLE_HEAT=ON \
