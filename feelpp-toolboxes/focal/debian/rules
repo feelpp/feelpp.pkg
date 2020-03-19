@@ -9,6 +9,7 @@ DEB_BUILD_GNU_SYSTEM ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_SYSTEM)
 DEB_HOST_MULTIARCH := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 export DEB_CXXFLAGS_SET=-DNDEBUG -O2
+export DEB_CXXFLAGS_MAINT_SET=-DNDEBUG -O2
 export DEB_CFLAGS_SET=-DNDEBUG -O2
 
 #  # -Wno-undefined-var-template to reduce number of warnings from ginac
