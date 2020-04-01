@@ -19,6 +19,7 @@ usr/include/feelpp/tabulate
 usr/include/feelpp/indicators
 usr/include/feelpp/mmg
 usr/share/feelpp/feel
+usr/share/feelpp/eigen3
 usr/share/feelpp/docker
 usr/share/feelpp/feelpp_gflags
 usr/share/feelpp/glog
