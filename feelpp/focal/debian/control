@@ -31,7 +31,7 @@ Build-Depends: quilt, debhelper (>= 10),
            mongodb-clients,
            mongodb-server,           
            libmongoclient-dev,           
-           python-pymongo,
+           python3-pymongo,
            ruby-progressbar,
            ruby-tilt,
            asciidoctor,ruby-asciidoctor-pdf,
@@ -243,18 +243,17 @@ Description: Data files for the library Feel++
   * geometry and mesh files
 
 
-# Package: python-feelpp
-# Section: python
-# Architecture: any
-# Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-bin,
-#  python (>= 2.7), python (<<2.8),
-#  libfeelpp1
-# Multi-Arch: foreign
-# Description: Feelpp Python wrapper
-#  Provides python wrappers for Feel++
-#  .
-#  Feel++ is a versatile finite element library to solve partial
-#  differential equations
+Package: python-feelpp
+Section: python
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-bin,
+ python (>= 3),  libfeelpp1
+Multi-Arch: foreign
+Description: Feelpp Python wrapper
+ Provides python wrappers for Feel++
+ .
+ Feel++ is a versatile finite element library to solve partial
+ differential equations
  
 # # Available: feel++ models: fluid, solid, fsi, thermodynamics
 
