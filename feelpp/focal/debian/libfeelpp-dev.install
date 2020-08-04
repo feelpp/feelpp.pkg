@@ -17,6 +17,7 @@ usr/include/feelpp/nlopt
 usr/include/feelpp/pybind11
 usr/include/feelpp/tabulate
 usr/include/feelpp/indicators
+usr/include/feelpp/simple-web-server
 usr/include/feelpp/mmg
 usr/share/feelpp/feel
 usr/share/feelpp/eigen3
