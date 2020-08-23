@@ -1,5 +1,5 @@
-usr/lib/*/libfeelpp_toolbox_model*.so
-usr/include/feelpp/toolboxes/*/modelcore/*.hpp
-usr/include/feelpp/toolboxes/*/modelmesh/*.hpp
-usr/include/feelpp/toolboxes/*/modelvf/*.hpp
-usr/include/feelpp/toolboxes/*/modelmaterials/*.hpp
+usr/lib/*/libfeelpp_model*.so
+usr/include/feelpp/toolboxes/feel/feelmodels/modelcore/*.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/modelmesh/*.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/modelvf/*.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/modelmaterials/*.hpp

@@ -1,2 +1,2 @@
 usr/lib/*/libfeelpp_toolbox_coefficientformpde*.so
-usr/include/feelpp/toolboxes/*/coefficientformpdes/*.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/coefficientformpdes/*.hpp

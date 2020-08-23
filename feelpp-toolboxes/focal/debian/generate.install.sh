@@ -10,11 +10,11 @@ EOF
 
         # dev files
         cat > libfeelpp-toolboxes1-${_tb}-dev.install <<EOF
-usr/lib/*/libfeelpp_toolbox_model*.so
-usr/include/feelpp/toolboxes/*/modelcore/*.hpp
-usr/include/feelpp/toolboxes/*/modelmesh/*.hpp
-usr/include/feelpp/toolboxes/*/modelvf/*.hpp
-usr/include/feelpp/toolboxes/*/modelmaterials/*.hpp
+usr/lib/*/libfeelpp_model*.so
+usr/include/feelpp/toolboxes/feel/feelmodels/modelcore/*.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/modelmesh/*.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/modelvf/*.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/modelmaterials/*.hpp
 EOF
 
 
@@ -27,15 +27,15 @@ EOF
         # dev files
         cat > libfeelpp-toolboxes1-${_tb}-dev.install <<EOF
 usr/lib/*/libfeelpp_toolbox_coefficientformpde*.so
-usr/include/feelpp/toolboxes/*/${_tb}/*.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/${_tb}/*.hpp
 EOF
 
         # executables
         cat > feelpp-toolboxes-${_tb}.install <<EOF
 usr/bin/feelpp_toolbox_${tb}
-usr/share/man/man1/feelpp_toolbox_${_tb}.*
-usr/share/doc/feelpp/toolboxes/feelpp_toolbox_${_tb}.*
 EOF
+#        usr/share/man/man1/feelpp_toolbox_${_tb}.*
+#        usr/share/doc/feelpp/toolboxes/feelpp_toolbox_${_tb}.*
 
     else
         # libraries
@@ -44,16 +44,23 @@ EOF
         # dev files
         cat > libfeelpp-toolboxes1-${_tb}-dev.install <<EOF
 usr/lib/*/libfeelpp_toolbox_${_tb}*.so
-usr/include/feelpp/toolboxes/*/${_tb}/*.hpp
+usr/include/feelpp/toolboxes/feel/feelmodels/${_tb}/*.hpp
 EOF
 
         # executables
-        cat > feelpp-toolboxes-${_tb}.install <<EOF
-usr/bin/feelpp_toolbox_${_tb}
+        if [ "$_tb" == "fsi"  ] || [ "$_tb" == "hdg"  ] ; then
+            cat > feelpp-toolboxes-${_tb}.install <<EOF
 usr/bin/feelpp_toolbox_${_tb}_*
 usr/share/man/man1/feelpp_toolbox_${_tb}.*
 usr/share/doc/feelpp/toolboxes/feelpp_toolbox_${_tb}.*
 EOF
+        else
+        cat > feelpp-toolboxes-${_tb}.install <<EOF
+usr/bin/feelpp_toolbox_${_tb}
+usr/share/man/man1/feelpp_toolbox_${_tb}.*
+usr/share/doc/feelpp/toolboxes/feelpp_toolbox_${_tb}.*
+EOF
+        fi
     fi
 done
 
