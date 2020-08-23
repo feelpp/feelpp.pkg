@@ -32,7 +32,7 @@ EOF
 
         # executables
         cat > feelpp-toolboxes-${_tb}.install <<EOF
-usr/bin/feelpp_toolbox_${tb}
+usr/bin/feelpp_toolbox_${_tb}
 EOF
 #        usr/share/man/man1/feelpp_toolbox_${_tb}.*
 #        usr/share/doc/feelpp/toolboxes/feelpp_toolbox_${_tb}.*
@@ -51,8 +51,6 @@ EOF
         if [ "$_tb" == "fsi"  ] || [ "$_tb" == "hdg"  ] ; then
             cat > feelpp-toolboxes-${_tb}.install <<EOF
 usr/bin/feelpp_toolbox_${_tb}_*
-usr/share/man/man1/feelpp_toolbox_${_tb}.*
-usr/share/doc/feelpp/toolboxes/feelpp_toolbox_${_tb}.*
 EOF
         else
         cat > feelpp-toolboxes-${_tb}.install <<EOF
