@@ -15,6 +15,7 @@ usr/include/feelpp/toolboxes/feel/feelmodels/modelcore/*.hpp
 usr/include/feelpp/toolboxes/feel/feelmodels/modelmesh/*.hpp
 usr/include/feelpp/toolboxes/feel/feelmodels/modelvf/*.hpp
 usr/include/feelpp/toolboxes/feel/feelmodels/modelmaterials/*.hpp
+usr/share/feelpp/toolboxes/cmake
 EOF
 
 
@@ -39,7 +40,7 @@ EOF
 
     else
         # libraries
-        echo "usr/lib/*/libfeelpp_toolbox_${_tb}*.so.*" > libfeelpp-toolboxes1-${_tb}.install
+        echo "usr/lib/*/libfeelpp_toolbox_${_tb}_*.so.*" > libfeelpp-toolboxes1-${_tb}.install
 
         # dev files
         cat > libfeelpp-toolboxes1-${_tb}-dev.install <<EOF
