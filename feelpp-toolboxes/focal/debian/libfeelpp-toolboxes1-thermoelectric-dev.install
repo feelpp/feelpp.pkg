@@ -1,2 +1,2 @@
-usr/lib/*/libfeelpp_toolbox_thermoelectric_.so
+usr/lib/*/libfeelpp_toolbox_thermoelectric_*.so
 usr/include/feelpp/toolboxes/feel/feelmodels/thermoelectric/*.hpp

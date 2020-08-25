@@ -44,7 +44,7 @@ EOF
 
         # dev files
         cat > libfeelpp-toolboxes1-${_tb}-dev.install <<EOF
-usr/lib/*/libfeelpp_toolbox_${_tb}_.so
+usr/lib/*/libfeelpp_toolbox_${_tb}_*.so
 usr/include/feelpp/toolboxes/feel/feelmodels/${_tb}/*.hpp
 EOF
 
