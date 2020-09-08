@@ -1,0 +1,2 @@
+usr/lib/*/libfeelpp_toolbox_fluid_*.so
+usr/include/feelpp/toolboxes/feel/feelmodels/fluid/*.hpp
