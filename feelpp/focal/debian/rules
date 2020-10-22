@@ -31,8 +31,8 @@ NUMJOBS:=$(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 
 cmake-configure-%:
 	dh_auto_configure -Bbuild-python$* -- \
-		-DCMAKE_C_COMPILER=/usr/bin/clang \
-		-DCMAKE_CXX_COMPILER=/usr/bin/clang++\
+		-DCMAKE_C_COMPILER=/usr/bin/clang-9 \
+		-DCMAKE_CXX_COMPILER=/usr/bin/clang++-9 \
 		-DCMAKE_C_FLAGS:STRING="-DNDEBUG -O2 -Wdate-time -D_FORTIFY_SOURCE=2 " \
 		-DCMAKE_C_FLAGS_DEBUG:STRING="" \
 		-DCMAKE_C_FLAGS_RELEASE:STRING="-DNDEBUG -O3" \
