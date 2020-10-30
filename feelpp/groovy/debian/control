@@ -5,7 +5,7 @@ Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.
 Uploaders: Christophe Prud'homme <prudhomm@debian.org>
 Build-Depends: quilt, debhelper (>= 10),
            cmake (>=3.13.0),
-           clang-9,g++-10,
+           clang,g++,
            dh-python, 
            python3, python3-dev, python3-setuptools, python3-sympy,python3-mpi4py,
 	       chrpath,
@@ -48,7 +48,7 @@ Vcs-Browser: http://svn.debian.org/wsvn/debian-science/packages/feel++/trunk
 Package: libfeelpp1
 Section: libs
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, g++-10, libgmsh4, python3-sympy
+Depends: ${shlibs:Depends}, ${misc:Depends}, g++, libgmsh4, python3-sympy
 Description: A library for the finite element method
  Provides the dynamic Feel++ libraries.
  .
@@ -85,7 +85,7 @@ Description: A library for the finite element method
 Package: libfeelpp-dev
 Section: libdevel
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp1 (= ${binary:Version}),clang-9,g++,cmake, cppcheck, libcurl4-openssl-dev, libgsl-dev, python3, python3-dev, python3-sympy, libboost1.67-all-dev,libcln-dev,petsc-dev, slepc-dev,  libhdf5-openmpi-dev, libnlopt-dev, libgsl-dev, libnetcdf-dev,libgl2ps-dev,libglu1-mesa-dev, libsm-dev, libxt-dev,libfftw3-mpi-dev, libxml2-dev, libgmsh-dev,libtbb-dev, libann-dev,libglpk-dev,libbz2-dev,libbson-dev,libmongoc-dev,libmongoclient-dev, libglew-dev
+Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp1 (= ${binary:Version}),clang,g++,cmake, cppcheck, libcurl4-openssl-dev, libgsl-dev, python3, python3-dev, python3-sympy, libboost1.67-all-dev,libcln-dev,petsc-dev, slepc-dev,  libhdf5-openmpi-dev, libnlopt-dev, libgsl-dev, libnetcdf-dev,libgl2ps-dev,libglu1-mesa-dev, libsm-dev, libxt-dev,libfftw3-mpi-dev, libxml2-dev, libgmsh-dev,libtbb-dev, libann-dev,libglpk-dev,libbz2-dev,libbson-dev,libmongoc-dev,libmongoclient-dev, libglew-dev
 Suggests: feelpp-doc, libfeelpp-dbg, doxygen, cmake-curses-gui
 Description: A library for the finite element method
  Provides the header files and static libraries.
