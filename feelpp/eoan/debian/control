@@ -7,7 +7,7 @@ Build-Depends: quilt, debhelper (>= 10),
            cmake (>=3.12.0),
            clang-8,
            dh-python,
-           python3, python3-dev, python3-setuptools, python3-sympy,
+           python3, python3-dev, python3-setuptools, python3-sympy,python3-mpi4py,
 	       chrpath,
 	       libboost1.67-all-dev, 
            libcln-dev,
@@ -31,10 +31,10 @@ Build-Depends: quilt, debhelper (>= 10),
            mongodb-clients,
            mongodb-server,           
            libmongoclient-dev,           
-           python-pymongo,
+           python3-pymongo,
            ruby-progressbar,
            ruby-tilt,
-           asciidoctor, ruby-asciidoctor-pdf,
+           asciidoctor,ruby-asciidoctor-pdf,
            libglew-dev
 # add pybind11-dev, python[3]-pybind11
 # for linking with paraview: libglew-dev
@@ -250,19 +250,17 @@ Description: Data files for the library Feel++
  .
   * geometry and mesh files
 
-
-# Package: python-feelpp
-# Section: python
-# Architecture: any
-# Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-bin,
-#  python (>= 2.7), python (<<2.8),
-#  libfeelpp1
-# Multi-Arch: foreign
-# Description: Feelpp Python wrapper
-#  Provides python wrappers for Feel++
-#  .
-#  Feel++ is a versatile finite element library to solve partial
-#  differential equations
+Package: python3-feelpp
+Section: python
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), ${python3:Depends}
+Provides: ${python3:Provides}
+Suggests: python3-matplotlib, python3-scipy
+Description: Python3 front-end of Feel++ (aka TUI)
+ Provides python wrappers for Feel++
+ .
+ Feel++ is a versatile finite element library to solve partial
+ differential equations
  
 # # Available: feel++ models: fluid, solid, fsi, thermodynamics
 
