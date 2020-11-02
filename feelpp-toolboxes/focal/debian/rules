@@ -64,7 +64,7 @@ cmake-configure-%:
 override_dh_auto_build: $(PYALL:python%=cmake-build-%)
 
 cmake-build-%:
-	$(MAKE) -j20 -C build-python$*/
+	$(MAKE) -j12 -C build-python$*/
 #	$(MAKE) $(test_makeflags) -C build-python$*/python
 #	$(MAKE) $(test_makeflags) -C build-python$*
 
