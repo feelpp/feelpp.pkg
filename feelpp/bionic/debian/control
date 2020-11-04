@@ -5,7 +5,7 @@ Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.
 Uploaders: Christophe Prud'homme <prudhomm@debian.org>
 Build-Depends: quilt, debhelper (>= 10),
            cmake (>=3.10.0),
-           clang-8,
+           clang-9,
            dh-python,
            python3, python3-dev, python3-setuptools, python3-sympy,
 	       chrpath,
@@ -32,9 +32,10 @@ Build-Depends: quilt, debhelper (>= 10),
            mongodb-server,           
            libmongoclient-dev,           
            python-pymongo,
+           ruby,
            ruby-progressbar,
            ruby-tilt,
-           asciidoctor,
+           asciidoctor,ruby-asciidoctor-pdf,
            libglew-dev
 # add pybind11-dev, python[3]-pybind11
 # for linking with paraview: libglew-dev
@@ -95,7 +96,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp1 (= ${bi
 	 libxml2-dev, libtbb-dev [amd64 i386],
      libann-dev, libglpk-dev,
      libmongoc-dev
-Recommends: clang-8     
+Recommends: clang-9     
 Suggests: feelpp-doc, libfeelpp-dbg, doxygen, cmake, cmake-curses-gui
 Description: A library for the finite element method
  Provides the header files and static libraries.
@@ -251,6 +252,17 @@ Description: Data files for the library Feel++
  .
   * geometry and mesh files
 
+Package: python3-feelpp
+Section: python
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), ${python3:Depends}
+Provides: ${python3:Provides}
+Suggests: python3-matplotlib, python3-scipy
+Description: Python3 front-end of Feel++ (aka TUI)
+ Provides python wrappers for Feel++
+ .
+ Feel++ is a versatile finite element library to solve partial
+ differential equations
 
 # Package: python-feelpp
 # Section: python
