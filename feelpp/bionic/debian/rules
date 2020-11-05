@@ -63,6 +63,9 @@ cmake-build-%:
 
 override_dh_auto_install: $(PYALL:python%=cmake-install-%)
 
+cmake-install-%:
+	dh_auto_install -Bbuild-python$*
+
 override_dh_auto_test:
 	echo "no testsuite"
 
