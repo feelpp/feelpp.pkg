@@ -18,36 +18,65 @@ export DEB_CXXFLAGS_MAINT_APPEND  = -Wno-inconsistent-missing-override -Wno-unde
 # export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 #
 
+PY3VER = $(shell py3versions -d)
+PYALL = $(PY3VER)
 %:
-	dh $@ --buildsystem=cmake --parallel --include-removal
+	dh $@ --buildsystem=cmake --parallel --include-removal --with python3 
+
+override_dh_auto_configure: $(PYALL:python%=cmake-configure-%) \
 
 NUMJOBS:=$(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS))) 
 
-extra_flags += \
- -DCMAKE_C_COMPILER=/usr/bin/clang-9 \
- -DCMAKE_CXX_COMPILER=/usr/bin/clang++-9\
- -DCMAKE_VERBOSE_MAKEFILE=ON \
- -DCMAKE_BUILD_TYPE=Release \
- -DFEELPP_PYTHON_VERSION=3 \
- -DFEELPP_ENABLE_PYTHON=ON \
- -DFEELPP_ENABLE_VTK=OFF \
- -DFEELPP_ENABLE_TOOLBOXES=OFF \
- -DFEELPP_ENABLE_TESTS=OFF \
- -DFEELPP_ENABLE_PYFEELPP_LIBFEELPP=OFF \
- -DLIBBSON_DIR=/usr \
- -DLIBMONGOC_DIR=/usr
+cmake-configure-%:
+	dh_auto_configure -Bbuild-python$* -- \
+		 -DCMAKE_C_COMPILER=/usr/bin/clang-9 \
+		 -DCMAKE_CXX_COMPILER=/usr/bin/clang++-9\
+		 -DCMAKE_C_FLAGS:STRING="-DNDEBUG -O2 -Wdate-time -D_FORTIFY_SOURCE=2 " \
+		 -DCMAKE_C_FLAGS_DEBUG:STRING="" \
+	     -DCMAKE_C_FLAGS_RELEASE:STRING="-DNDEBUG -O3" \
+		 -DCMAKE_CXX_FLAGS:STRING="-DNDEBUG -O2 -Wdate-time -D_FORTIFY_SOURCE=2 " \
+		 -DCMAKE_CXX_FLAGS_DEBUG:STRING="" \
+		 -DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG -O3" \
+		 -DCMAKE_VERBOSE_MAKEFILE=ON \
+		 -DCMAKE_BUILD_TYPE=Release \
+		 -DFEELPP_PYTHON_VERSION=3 \
+		 -DFEELPP_ENABLE_PYTHON=ON \
+		 -DFEELPP_ENABLE_VTK=OFF \
+		 -DFEELPP_ENABLE_TOOLBOXES=OFF \
+		 -DFEELPP_ENABLE_TESTS=OFF \
+		 -DFEELPP_ENABLE_PYFEELPP_LIBFEELPP=OFF \
+		 -DLIBBSON_DIR=/usr \
+		 -DLIBMONGOC_DIR=/usr \
+		 -DPYTHON_EXECUTABLE:FILEPATH=/usr/bin/python$* \
+		 -DPYTHON_INCLUDE_DIR:PATH=$$(python$*-config --includes | sed -e 's/ .*//' -e 's/^-I//') \
+		 -DPYTHON_INCLUDE_DIR2:PATH=$$(python$*-config --includes | sed -e 's/ .*//' -e 's/^-I//') \
+		 -DPYTHON_LIBRARY:PATH=$$(python$*-config --ldflags | sed -e 's/ .*//' -e 's/^-L//')/libpython$*.so \
+		 -DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,--no-as-needed -lm -lrt"
 
-extra_flags += \
- -DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,--no-as-needed -lm -lrt"
 
-override_dh_auto_configure:
-	dh_auto_configure -- $(extra_flags)
+override_dh_auto_build: $(PYALL:python%=cmake-build-%)
+
+cmake-build-%:
+	$(MAKE) -j20 -C build-python$*/
+#	$(MAKE) $(test_makeflags) -C build-python$*/python
+#	$(MAKE) $(test_makeflags) -C build-python$*
+
+override_dh_auto_install: $(PYALL:python%=cmake-install-%)
 
 override_dh_auto_test:
 	echo "no testsuite"
 
 override_dh_shlibdeps:
 	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info -l$(shell pwd)/lib/$(shell uname -m)
+
+override_dh_makeshlibs:
+	dh_makeshlibs -Xpyshared
+
+override_dh_strip:
+	dh_strip -plibfeelpp1 -ppython3-feelpp
+
+override_dh_python3:
+	dh_python3 -p python3-feelpp
 
 get-orig-source:
 	uscan --force-download
