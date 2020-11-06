@@ -50,7 +50,7 @@ Vcs-Browser: http://svn.debian.org/wsvn/debian-science/packages/feel++/trunk
 Package: libfeelpp1
 Section: libs
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, g++-8, libgmsh4, python3-sympy
+Depends: ${shlibs:Depends}, ${misc:Depends}, g++-8, libgmsh4.1, python3-sympy
 Description: A library for the finite element method
  Provides the dynamic Feel++ libraries.
  .
@@ -246,9 +246,9 @@ Description: Data files for the library Feel++
 Package: python3-feelpp
 Section: python
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), ${python3:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), ${python3:Depends}, python3-mpi4py, feelpp-tools, ssh
 Provides: ${python3:Provides}
-Suggests: python3-matplotlib, python3-scipy
+Recommends: python3-matplotlib, python3-scipy, feelpp-data
 Description: Python3 front-end of Feel++ (aka TUI)
  Provides python wrappers for Feel++
  .

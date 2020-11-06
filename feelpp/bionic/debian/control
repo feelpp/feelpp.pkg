@@ -255,9 +255,9 @@ Description: Data files for the library Feel++
 Package: python3-feelpp
 Section: python
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), ${python3:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), ${python3:Depends}, python3-mpi4py, ssh, feelpp-tools
 Provides: ${python3:Provides}
-Suggests: python3-matplotlib, python3-scipy
+Recommends: python3-matplotlib, python3-scipy, feelpp-data
 Description: Python3 front-end of Feel++ (aka TUI)
  Provides python wrappers for Feel++
  .
