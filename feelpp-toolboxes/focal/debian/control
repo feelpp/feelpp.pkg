@@ -298,7 +298,7 @@ Description: Feel++ toolboxes Python bindings
 Package: python3-feelpp-toolboxes-core
 Section: python
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-core (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-core (= ${binary:Version}), python3-feelpp
 Recommends: feelpp-toolboxes-data
 Description: Feel++ toolboxes core Python bindings
  Provides Feel++ core toolbox via Python bindings
@@ -314,7 +314,7 @@ Description: Feel++ toolboxes core Python bindings
 Package: python3-feelpp-toolboxes-heat
 Section: python
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-heat (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-heat (= ${binary:Version}), python3-feelpp-toolboxes-core
 Recommends: feelpp-toolboxes-data
 Description: Feel++ toolboxes heat Python bindings
  Provides Feel++ heat toolbox via Python bindings
@@ -322,7 +322,7 @@ Description: Feel++ toolboxes heat Python bindings
 Package: python3-feelpp-toolboxes-electric
 Section: python
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-electric (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-electric (= ${binary:Version}), python3-feelpp-toolboxes-core
 Recommends: feelpp-toolboxes-data
 Description: Feel++ toolboxes electric Python bindings
  Provides Feel++ electric toolbox via Python bindings
@@ -330,7 +330,7 @@ Description: Feel++ toolboxes electric Python bindings
 Package: python3-feelpp-toolboxes-fluid
 Section: python
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-fluid (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-fluid (= ${binary:Version}), python3-feelpp-toolboxes-core
 Recommends: feelpp-toolboxes-data
 Description: Feel++ toolboxes fluid Python bindings
  Provides Feel++ fluid toolbox via Python bindings
@@ -338,7 +338,7 @@ Description: Feel++ toolboxes fluid Python bindings
 Package: python3-feelpp-toolboxes-solid
 Section: python
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-solid (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-solid (= ${binary:Version}), python3-feelpp-toolboxes-core
 Recommends: feelpp-toolboxes-data
 Description: Feel++ toolboxes solid Python bindings
  Provides Feel++ solid toolbox via Python bindings
@@ -370,7 +370,7 @@ Description: Feel++ toolboxes solid Python bindings
 Package: python3-feelpp-toolboxes-thermoelectric
 Section: python
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-thermoelectric (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-thermoelectric (= ${binary:Version}), python3-feelpp-toolboxes-heat, python3-feelpp-toolboxes-electric
 Recommends: feelpp-toolboxes-data
 Description: Feel++ toolboxes thermoelectric Python bindings
  Provides Feel++ thermoelectric toolbox via Python bindings
