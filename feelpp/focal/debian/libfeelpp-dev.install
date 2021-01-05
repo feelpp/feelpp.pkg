@@ -3,6 +3,7 @@ usr/lib/*/libfeelpp*.so
 usr/lib/lib*.a
 usr/include/feelpp/bsoncxx
 usr/include/feelpp/contrib
+usr/include/feelpp/cpr
 usr/include/feelpp/eigen
 usr/include/feelpp/feel
 usr/include/feelpp/feelpp_kwsys
