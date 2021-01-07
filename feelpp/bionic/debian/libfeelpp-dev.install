@@ -11,7 +11,7 @@ usr/include/feelpp/fmilib
 usr/include/feelpp/gflags
 usr/include/feelpp/ginac
 usr/include/feelpp/glog
-usr/include/feelpp/gmsh
+# usr/include/feelpp/gmsh
 usr/include/feelpp/boost/hana
 usr/include/feelpp/metis
 usr/include/feelpp/mongocxx
