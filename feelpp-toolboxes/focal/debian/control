@@ -36,7 +36,7 @@ Build-Depends: quilt, debhelper (>= 10),
            ruby-tilt,
            asciidoctor,ruby-asciidoctor-pdf,
            libglew-dev,
-           libfeelpp-dev
+           libfeelpp-dev, feelpp-tools
 Standards-Version: 3.9.4
 X-Python-Version: current
 Homepage: http://www.feelpp.org
