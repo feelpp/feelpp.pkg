@@ -24,7 +24,7 @@ upload_bintray.sh 0.107
 .edit bionic repo
 ----
 pbuilder-dist bionic login --save-after-login
-
+apt-get install apt-transport-https ca-certificates gnupg software-properties-common wget
 # Add kitware repo key
 wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
 
