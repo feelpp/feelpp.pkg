@@ -5,6 +5,7 @@ usr/include/feelpp/bsoncxx
 usr/include/feelpp/contrib
 usr/include/feelpp/cpr
 usr/include/feelpp/eigen
+usr/include/feelpp/fmt
 usr/include/feelpp/feel
 usr/include/feelpp/feelpp_kwsys
 usr/include/feelpp/fmilib
