@@ -26,6 +26,7 @@ usr/include/feelpp/concepts
 usr/include/feelpp/meta
 usr/include/feelpp/simple-web-server
 usr/include/feelpp/mmg
+usr/include/feelpp/parmmg
 usr/share/feelpp/feel
 usr/share/feelpp/eigen3
 usr/share/feelpp/docker
