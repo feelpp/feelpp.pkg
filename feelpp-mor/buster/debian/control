@@ -35,7 +35,7 @@ Build-Depends: quilt, debhelper (>= 9),
            ruby-tilt,
            asciidoctor,ruby-asciidoctor-pdf,
            libglew-dev,
-           libfeelpp-dev,
+           libfeelpp-dev, feelpp-tools,
            libfeelpp-toolboxes1-all-dev
 Standards-Version: 3.9.4
 X-Python-Version: current
@@ -53,7 +53,7 @@ Vcs-Browser: http://svn.debian.org/wsvn/debian-science/packages/feel++/trunk
 Package: feelpp-mor
 Section: science
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-mor1 (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-feelpp-mor (= ${binary:Version})
 Description: Feel++ MOR applications
  Provides Feel++ model order reduction applications
 
