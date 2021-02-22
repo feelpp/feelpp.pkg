@@ -3,10 +3,12 @@ usr/lib/*/libfeelpp*.so
 usr/lib/lib*.a
 usr/include/feelpp/bsoncxx
 usr/include/feelpp/contrib
+usr/include/feelpp/cpr
 usr/include/feelpp/eigen
 usr/include/feelpp/feel
 usr/include/feelpp/feelpp_kwsys
 usr/include/feelpp/fmilib
+usr/include/feelpp/fmt
 usr/include/feelpp/gflags
 usr/include/feelpp/ginac
 usr/include/feelpp/glog
@@ -23,6 +25,7 @@ usr/include/feelpp/concepts
 usr/include/feelpp/meta
 usr/include/feelpp/simple-web-server
 usr/include/feelpp/mmg
+usr/include/feelpp/parmmg
 usr/share/feelpp/feel
 usr/share/feelpp/eigen3
 usr/share/feelpp/docker

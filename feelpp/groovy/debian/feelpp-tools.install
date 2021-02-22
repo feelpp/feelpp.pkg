@@ -4,6 +4,7 @@ usr/bin/feelpp_screen*
 usr/bin/feelpp_fm*
 usr/bin/feelpp_dock*
 usr/bin/feelpp_build*
+usr/bin/feelpp_parmmg*
 usr/share/man/man1/feelpp_mesh*
 usr/share/man/man1/feelpp_remote*
 usr/share/man/man1/feelpp_fm*
