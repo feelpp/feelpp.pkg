@@ -35,7 +35,7 @@ Build-Depends: quilt, debhelper (>= 9),
            ruby-tilt,
            asciidoctor,ruby-asciidoctor-pdf,
            libglew-dev,
-           libfeelpp-dev
+           libfeelpp-dev, feelpp-tools
 Standards-Version: 3.9.4
 X-Python-Version: current
 Homepage: http://www.feelpp.org
@@ -48,14 +48,14 @@ Vcs-Browser: http://svn.debian.org/wsvn/debian-science/packages/feel++/trunk
 Package: libfeelpp-toolboxes1-core
 Section: libs
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: libfeelpp1 
+Depends: libfeelpp1 (= ${binary:Version}), feelpp-tools (= ${binary:Version})
 Description: Feel++ toolboxes model libraries 
  Provides Feel++ toolboxes model libraries
 
 Package: libfeelpp-toolboxes1-core-dev
 Section: libdevel
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: libfeelpp-toolboxes1-core (= ${binary:Version}), libfeelpp-dev 
+Depends: libfeelpp-toolboxes1-core (= ${binary:Version}), libfeelpp-dev (= ${binary:Version})
 Description: Development files for Feel++ toolboxes model
  Provides the header files and static libraries.
 
