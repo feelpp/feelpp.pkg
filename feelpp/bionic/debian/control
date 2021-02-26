@@ -161,7 +161,7 @@ Description: A library for the finite element method
 Package: feelpp-tools
 Section: science
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), gmsh
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), gmsh, asciidoctor
 Description: A library for the finite element method
  Provides some applications codes(source and executables) such
  as laplacian with cG and dG methods, stokes, heat transfer, solid
