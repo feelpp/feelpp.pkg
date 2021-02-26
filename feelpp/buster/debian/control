@@ -89,7 +89,7 @@ Description: A library for the finite element method
 Package: libfeelpp-dev
 Section: libdevel
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp1 (= ${binary:Version}),clang-8,g++,cmake(>=3.16.0), cppcheck, libcurl4-openssl-dev, libgsl-dev, python3, python3-dev, python3-sympy, libboost1.67-all-dev,libcln-dev,petsc-dev, slepc-dev,  libhdf5-openmpi-dev, libnlopt-dev, libgsl-dev, libnetcdf-dev,libgl2ps-dev,libglu1-mesa-dev, libsm-dev, libxt-dev,libfftw3-mpi-dev, libxml2-dev, libgmsh-dev,libtbb-dev, libann-dev,libglpk-dev,libbz2-dev,libbson-dev,libmongoc-dev,libmongoclient-dev, libglew-dev, libmetis-dev, libscotch-dev
+Depends: ${shlibs:Depends}, ${misc:Depends}, mpi-default-dev, libfeelpp1 (= ${binary:Version}),clang-8,g++,cmake(>=3.16.0), cppcheck, libcurl4-openssl-dev, libgsl-dev, python3, python3-dev, python3-sympy, libboost1.67-all-dev,libcln-dev,petsc-dev, slepc-dev,  libhdf5-openmpi-dev, libnlopt-dev, libgsl-dev, libnetcdf-dev,libgl2ps-dev,libglu1-mesa-dev, libsm-dev, libxt-dev,libfftw3-mpi-dev, libxml2-dev, libgmsh-dev,libtbb-dev, libann-dev,libglpk-dev,libbz2-dev,libbson-dev,libmongoc-dev,libmongoclient-dev, libglew-dev, libmetis-dev, libscotch-dev, python3-dev
 Suggests: feelpp-doc, libfeelpp-dbg, doxygen, cmake-curses-gui
 Description: A library for the finite element method
  Provides the header files and static libraries.
@@ -248,7 +248,7 @@ Description: Data files for the library Feel++
 Package: python3-feelpp
 Section: python
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), ${python3:Depends}, python3-mpi4py, feelpp-tools, ssh
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), ${python3:Depends}, python3-mpi4py, feelpp-tools, ssh,  python3-sympy, python3-mpi4py
 Provides: ${python3:Provides}
 Recommends: python3-matplotlib, python3-scipy, feelpp-data
 Description: Python3 front-end of Feel++ (aka TUI)
