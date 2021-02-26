@@ -3,7 +3,7 @@ Section: science
 Priority: extra
 Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
 Uploaders: Christophe Prud'homme <prudhomm@debian.org>
-Build-Depends: quilt, debhelper (>= 9), dh-python, libfeelpp-dev
+Build-Depends: quilt, debhelper (>= 9), dh-python, libfeelpp-dev, feelpp-tools, python3-feelpp
 Standards-Version: 3.9.4
 X-Python-Version: current
 Homepage: http://www.feelpp.org
