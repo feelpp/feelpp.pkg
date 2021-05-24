@@ -10,6 +10,8 @@ arch=${7:-amd64,i386}
 for i in $rep/*.deb $rep/*.changes; do
     
     filename=$(basename $i)
-    curl -X PUT -T $i -uprudhomm:${BINTRAY_API_KEY} "https://api.bintray.com/content/feelpp/$repo/feelpp/$version/$distribution/pool/$channel/f/$component/$filename;deb_distribution=$distribution;deb_component=$channel;deb_architecture=$arch;publish=1;override=1"
+    curl -X PUT -T $i -uchristophe.prudhomme@cemosis.fr:${BINTRAY_API_KEY} "https://feelpp.jfrog.io/artifactory/ubuntu/pool/$i;deb.distribution=$distribution;deb.component=$component;deb.architecture=$arch;publish=1;override=1"
+    
+#"https://xapi.bintray.com/content/feelpp/$repo/feelpp/$version/$distribution/pool/$channel/f/$component/$filename;deb_distribution=$distribution;deb_component=$channel;deb_architecture=$arch;publish=1;override=1"
 
 done
