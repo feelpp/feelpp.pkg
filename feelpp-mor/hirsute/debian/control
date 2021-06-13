@@ -1,0 +1,33 @@
+Source: feelpp-mor
+Section: science
+Priority: extra
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Christophe Prud'homme <prudhomm@debian.org>
+Build-Depends: quilt, debhelper (>= 10), dh-python, libfeelpp-toolboxes1-all-dev
+Standards-Version: 3.9.4
+X-Python-Version: current
+Homepage: http://www.feelpp.org
+Vcs-Svn: svn://svn.debian.org/svn/debian-science/packages/feel++/trunk
+Vcs-Browser: http://svn.debian.org/wsvn/debian-science/packages/feel++/trunk
+
+# Package: libfeelpp-mor1
+# Section: libs
+# Architecture: amd64 i386 ia64 powerpc sparc
+# Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version})
+# Description: Feel++ MOR libraries
+#  Provides Feel++ model order reduction libraries
+
+Package: feelpp-mor
+Section: science
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-mor1 (= ${binary:Version})
+Description: Feel++ MOR applications
+ Provides Feel++ model order reduction applications
+
+Package: python3-feelpp-mor
+Section: python
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version})
+Description: Feel++ MOR Python bindings
+ Provides Feel++ model order reduction via Python bindings
+

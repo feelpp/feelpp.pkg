@@ -1,0 +1,2 @@
+usr/lib/*/libfeelpp_toolbox_fsi_*.so
+usr/include/feelpp/toolboxes/feel/feelmodels/fsi/*.hpp
