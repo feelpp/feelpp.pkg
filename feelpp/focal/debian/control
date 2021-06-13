@@ -249,6 +249,7 @@ Section: python
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), ${python3:Depends}
 Provides: ${python3:Provides}
+Recommends: python3-pytest, python3-gmsh, python3-plotly, python3-sklearn-pandas 
 Suggests: python3-matplotlib, python3-scipy
 Description: Python3 front-end of Feel++ (aka TUI)
  Provides python wrappers for Feel++
