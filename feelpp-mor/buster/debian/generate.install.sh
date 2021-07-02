@@ -11,7 +11,6 @@ EOF
         # dev files
         cat > libfeelpp-toolboxes1-${_tb}-dev.install <<EOF
 usr/lib/*/libfeelpp_model*.so
-usr/include/feelpp/toolboxes/feel/feelmodels/modelalg/*.hpp
 usr/include/feelpp/toolboxes/feel/feelmodels/modelcore/*.hpp
 usr/include/feelpp/toolboxes/feel/feelmodels/modelmesh/*.hpp
 usr/include/feelpp/toolboxes/feel/feelmodels/modelvf/*.hpp
