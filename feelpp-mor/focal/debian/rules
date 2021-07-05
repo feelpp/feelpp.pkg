@@ -46,6 +46,7 @@ cmake-configure-%:
 		-DCMAKE_BUILD_TYPE=Release \
 		-DPYTHON_EXECUTABLE:FILEPATH=/usr/bin/python${PYVER} \
 		-DFEELPP_ENABLE_PYFEELPP_TOOLBOXES=ON \
+		-DFEELPP_ENABLE_MOR_TOOLBOX=ON \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,--no-as-needed -lm -lrt"
 
 override_dh_auto_build: $(PYALL:python%=cmake-build-%)
