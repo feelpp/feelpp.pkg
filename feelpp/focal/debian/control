@@ -14,6 +14,7 @@ Build-Depends: quilt, debhelper (>= 10),
            libcln-dev,
            petsc-dev,
            slepc-dev,
+           python3-petsc4py-real,python3-slepc4py-real,
            libhdf5-openmpi-dev,
            libnlopt-dev,
            libgsl-dev,
@@ -249,7 +250,7 @@ Section: python
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), ${python3:Depends}
 Provides: ${python3:Provides}
-Recommends: python3-pytest, python3-gmsh, python3-plotly, python3-sklearn-pandas 
+Recommends: python3-pytest, python3-gmsh, python3-plotly, python3-sklearn-pandas, python3-petsc4py-real, python3-slepc4py-real 
 Suggests: python3-matplotlib, python3-scipy
 Description: Python3 front-end of Feel++ (aka TUI)
  Provides python wrappers for Feel++
