@@ -38,7 +38,8 @@ Build-Depends: quilt, debhelper (>= 10),
            ruby-progressbar,
            ruby-tilt,
            asciidoctor,ruby-asciidoctor-pdf,
-           libglew-dev
+           libglew-dev,
+	   gnuplot, libglfw3-dev
 # add pybind11-dev, python[3]-pybind11
 # for linking with paraview: libglew-dev
 # libpng-dev, libtiff-dev, libjsoncpp-dev, libtheora-dev, libfreetype6-dev, libnetcdf-cxx-legacy-dev ?
