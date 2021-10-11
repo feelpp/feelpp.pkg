@@ -1,2 +1,2 @@
-usr/lib/python3*/*-packages/feelpp/toolboxes/*.py
-usr/lib/python3*/*-packages/feelpp/toolboxes/*.so
+usr/lib/python3*/*-packages/feelpp/toolboxes/core/*.py
+usr/lib/python3*/*-packages/feelpp/toolboxes/core/*.so
