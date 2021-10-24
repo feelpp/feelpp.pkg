@@ -17,6 +17,13 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version})
 Description: Feel++ MOR libraries
  Provides Feel++ model order reduction libraries
 
+Package: libfeelpp-mor-dev
+Section: libdevel
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: libfeelpp-toolboxes1-dev (= ${binary:Version}), libfeelpp-mor1 (= ${binary:Version})
+Description: Development files for Feel++ mor 
+ Provides the header files and static libraries.
+
 Package: feelpp-mor
 Section: science
 Architecture: amd64 i386 ia64 powerpc sparc
