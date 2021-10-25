@@ -20,7 +20,7 @@ Description: Feel++ MOR libraries
 Package: libfeelpp-mor-dev
 Section: libdevel
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: libfeelpp-toolboxes1-dev (= ${binary:Version}), libfeelpp-mor1 (= ${binary:Version})
+Depends: libfeelpp-toolboxes1-all-dev (= ${binary:Version}), libfeelpp-mor1 (= ${binary:Version})
 Description: Development files for Feel++ mor 
  Provides the header files and static libraries.
 
