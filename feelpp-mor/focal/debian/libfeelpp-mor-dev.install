@@ -1,2 +1,3 @@
 usr/lib/*/libfeelpp_crb*.so
 usr/share/feelpp/mor/cmake
+usr/include/feelpp/mor/*
