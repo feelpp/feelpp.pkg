@@ -271,13 +271,13 @@ Recommends: feelpp-toolboxes-data
 Description: Feel++ toolboxes core Python bindings
  Provides Feel++ core toolbox via Python bindings
 
-# Package: python3-feelpp-toolboxes-coefficientformpdes
-# Section: python
-# Architecture: amd64 i386 ia64 powerpc sparc
-# Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-coefficientformpdes (= ${binary:Version})
-# Recommends: feelpp-toolboxes-data
-# Description: Feel++ toolboxes coefficientformpdes Python bindings
-#  Provides Feel++ coefficientformpdes toolbox via Python bindings
+Package: python3-feelpp-toolboxes-coefficientformpdes
+Section: python
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-coefficientformpdes (= ${binary:Version})
+Recommends: feelpp-toolboxes-data
+Description: Feel++ toolboxes coefficientformpdes Python bindings
+  Provides Feel++ coefficientformpdes toolbox via Python bindings
 
 Package: python3-feelpp-toolboxes-heat
 Section: python
@@ -311,13 +311,13 @@ Recommends: feelpp-toolboxes-data
 Description: Feel++ toolboxes solid Python bindings
  Provides Feel++ solid toolbox via Python bindings
 
-# Package: python3-feelpp-toolboxes-hdg
-# Section: python
-# Architecture: amd64 i386 ia64 powerpc sparc
-# Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-hdg (= ${binary:Version})
-# Recommends: feelpp-toolboxes-data
-# Description: Feel++ toolboxes hdg Python bindings
-#  Provides Feel++ hdg toolbox via Python bindings
+Package: python3-feelpp-toolboxes-hdg
+Section: python
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-hdg (= ${binary:Version})
+Recommends: feelpp-toolboxes-data
+Description: Feel++ toolboxes hdg Python bindings
+ Provides Feel++ hdg toolbox via Python bindings
 # 
 # Package: python3-feelpp-toolboxes-fsi
 # Section: python
