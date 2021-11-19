@@ -9,6 +9,7 @@ DEB_BUILD_GNU_SYSTEM ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_SYSTEM)
 DEB_HOST_MULTIARCH := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 export DEB_CXXFLAGS_SET=-DNDEBUG -O2
+export DEB_CXXFLAGS_MAINT_SET=-DNDEBUG -O2
 export DEB_CFLAGS_SET=-DNDEBUG -O2
 
 #  # -Wno-undefined-var-template to reduce number of warnings from ginac
@@ -42,7 +43,7 @@ cmake-configure-%:
 		-DCMAKE_CXX_FLAGS_DEBUG:STRING="" \
 		-DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG -O3" \
 		-DCMAKE_VERBOSE_MAKEFILE=OFF \
-		-DCMAKE_BUILD_TYPE=Releases \
+		-DCMAKE_BUILD_TYPE=Release \
 		-DFEELPP_TOOLBOXES_ENABLE=ON \
 		-DFEELPP_TOOLBOXES_ENABLE_MESHALE=ON \
 		-DFEELPP_TOOLBOXES_ENABLE_HEAT=ON \
