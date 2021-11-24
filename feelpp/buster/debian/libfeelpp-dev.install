@@ -16,6 +16,7 @@ usr/include/feelpp/gmsh
 usr/include/feelpp/boost/hana
 usr/include/feelpp/metis
 usr/include/feelpp/mongocxx
+usr/include/feelpp/napp
 usr/include/feelpp/nlopt
 usr/include/feelpp/pybind11
 usr/include/feelpp/tabulate
