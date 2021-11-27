@@ -5,6 +5,8 @@ fi
 if [ "$dist" = "buster" -o "$dist" = "bullseye"]; then
     flavor=debian
 fi
+echo "dist: $impish  -- flavor: $flavor" 
+
 aptly repo create -distribution=$dist -component=stable feelpp-$dist-stable
 aptly repo create -distribution=$dist -component=latest feelpp-$dist-latest
 
