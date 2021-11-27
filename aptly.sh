@@ -10,4 +10,12 @@ echo "dist: $impish  -- flavor: $flavor"
 aptly repo create -distribution=$dist -component=stable feelpp-$dist-stable
 aptly repo create -distribution=$dist -component=latest feelpp-$dist-latest
 
-aptly publish repo -passphrase-file=$BUILDKITE_PASSPHRASE -architectures="amd64" -component="stable,latest" feelpp-$dist-stable feelpp-$dist-latest s3:apt.feelpp.org:$flavor
+if test -z "$BUILDKITE_PASSPHRASE"; then
+    echo "passphrase not defined"
+    return
+else
+    echo "passphrase defined..."
+    echo $BUILDKITE_PASSPHRASE > pp
+    aptly publish repo -passphrase-file=pp -architectures="amd64" -component="stable,latest" feelpp-$dist-stable feelpp-$dist-latest s3:apt.feelpp.org:$flavor
+    rm pp
+fi
