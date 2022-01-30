@@ -9,7 +9,7 @@ usr/bin/feelpp_parmmg*
 usr/bin/feelpp_pkg*
 usr/share/man/man1/feelpp_mesh*
 usr/share/man/man1/feelpp_remote*
-usr/share/man/man1/feelpp_fm*
+# usr/share/man/man1/feelpp_fm*
 usr/share/man/man1/feelpp_do*
 usr/share/doc/feelpp/mesh
 usr/share/doc/feelpp/Feelpp
