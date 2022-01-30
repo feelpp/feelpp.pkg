@@ -1,5 +1,0 @@
-usr/bin/feelpp_toolbox_thermoelectric*
-usr/lib/libfeelpp_model_thermoelectric*.so
-
-usr/include/feelpp/toolboxes/feel/feelmodels/thermoelectric/electricpropertiesdescription.hpp
-usr/include/feelpp/toolboxes/feel/feelmodels/thermoelectric/thermoelectric.hpp

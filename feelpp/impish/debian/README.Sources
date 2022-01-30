@@ -1,8 +1,0 @@
-To get sources 
-  git clone git@github.com:feelpp/feelpp.git
-  cd feelpp/
-  git submodule update --init --recursive contrib/nlopt
-  git submodule update --init --recursive contrib/hpddm
-  git submodule update --init --recursive contrib/ipopt
-  git checkout master
-

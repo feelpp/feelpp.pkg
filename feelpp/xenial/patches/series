@@ -1,6 +1,0 @@
-#remove-test-FTBS.patch
-add-boost-1.62.patch
-fix-stdcxx11.patch
-# #qt5.patch
-xenial.patch
-enable_python2.patch
