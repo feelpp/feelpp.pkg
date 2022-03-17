@@ -48,6 +48,7 @@ cmake-configure-%:
 		-DFEELPP_ENABLE_MATPLOT=ON\
 		-DFEELPP_ENABLE_QUICKSTART=ON \
 		-DFEELPP_ENABLE_TOOLBOXES=OFF \
+		-DFEELPP_ENABLE_FEELPP_PYTHON=OFF \
 		-DFEELPP_ENABLE_TESTS=OFF \
 		-DFEELPP_ENABLE_PYFEELPP_LIBFEELPP=OFF \
 		-DLIBBSON_DIR=/usr \
@@ -82,10 +83,10 @@ override_dh_makeshlibs:
 	dh_makeshlibs -Xpyshared
 
 override_dh_strip:
-	dh_strip -plibfeelpp1 -ppython3-feelpp
+	dh_strip -plibfeelpp1 # -ppython3-feelpp
 
-override_dh_python3:
-	dh_python3 -p python3-feelpp
+#override_dh_python3:
+#	dh_python3 -p python3-feelpp
 
 get-orig-source:
 	uscan --force-download
