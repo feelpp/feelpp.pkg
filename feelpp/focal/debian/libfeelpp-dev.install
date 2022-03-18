@@ -26,7 +26,9 @@ usr/include/feelpp/pybind11
 usr/include/feelpp/range
 usr/include/feelpp/simple-web-server
 usr/include/feelpp/std
+usr/include/feelpp/spdlog
 usr/include/feelpp/tabulate
+usr/include/feelpp/taskflow
 usr/share/feelpp/feel
 usr/share/feelpp/eigen3
 usr/share/feelpp/docker
