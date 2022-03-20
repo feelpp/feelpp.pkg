@@ -33,7 +33,7 @@ override_dh_auto_configure: cmake-configure
 NUMJOBS:=$(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS))) 
 
 cmake-configure:
-	/usr/local/bin/cmake --preset toolboxes \
+	cmake --preset toolboxes \
 		-DCMAKE_INSTALL_PREFIX=/usr/ \
 		-DCMAKE_C_COMPILER=/usr/bin/clang \
 		-DCMAKE_CXX_COMPILER=/usr/bin/clang++\
@@ -63,8 +63,8 @@ cmake-configure:
 override_dh_auto_build: cmake-build
 
 cmake-build:
-	/usr/local/bin/cmake --version
-	DESTDIR=debian/tmp /usr/local/bin/cmake --build --preset toolboxes -j40 
+	cmake --version
+	DESTDIR=debian/tmp cmake --build --preset toolboxes -j40 
 
 override_dh_auto_install: cmake-install
 
