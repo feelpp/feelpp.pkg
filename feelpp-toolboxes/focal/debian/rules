@@ -25,15 +25,16 @@ PY3VER = $(shell py3versions -d)
 PYALL = $(PY3VER)
 
 %:
-	dh $@ --buildsystem=cmake --parallel --include-removal --with python3 
+	dh $@ --without=build-stamp --buildsystem=cmake --parallel --include-removal 
 
-override_dh_auto_configure: $(PYALL:python%=cmake-configure-%) \
+override_dh_auto_configure: cmake-configure
 
 
 NUMJOBS:=$(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS))) 
 
-cmake-configure-%:
-	dh_auto_configure -Bbuild-python$* -- \
+cmake-configure:
+	/usr/local/bin/cmake --preset toolboxes \
+		-DCMAKE_INSTALL_PREFIX=/usr/ \
 		-DCMAKE_C_COMPILER=/usr/bin/clang \
 		-DCMAKE_CXX_COMPILER=/usr/bin/clang++\
 		-DCMAKE_C_FLAGS:STRING="-DNDEBUG -O2 -Wdate-time -D_FORTIFY_SOURCE=2 " \
@@ -43,8 +44,6 @@ cmake-configure-%:
 		-DCMAKE_CXX_FLAGS_DEBUG:STRING="" \
 		-DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG -O3" \
 		-DCMAKE_VERBOSE_MAKEFILE=OFF \
-		-DCMAKE_BUILD_TYPE=Release \
-		-DFEELPP_TOOLBOXES_ENABLE=ON \
 		-DFEELPP_TOOLBOXES_ENABLE_MESHALE=ON \
 		-DFEELPP_TOOLBOXES_ENABLE_HEAT=ON \
 		-DFEELPP_TOOLBOXES_ENABLE_ELECTRIC=ON \
@@ -61,17 +60,17 @@ cmake-configure-%:
 		-DFEELPP_ENABLE_PYFEELPP_TOOLBOXES=ON \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,--no-as-needed -lm -lrt"
 
-override_dh_auto_build: $(PYALL:python%=cmake-build-%)
+override_dh_auto_build: cmake-build
 
-cmake-build-%:
-	$(MAKE) -j12 -C build-python$*/
-#	$(MAKE) $(test_makeflags) -C build-python$*/python
-#	$(MAKE) $(test_makeflags) -C build-python$*
+cmake-build:
+	/usr/local/bin/cmake --version
+	DESTDIR=debian/tmp /usr/local/bin/cmake --build --preset toolboxes -j40 
 
-override_dh_auto_install: $(PYALL:python%=cmake-install-%)
+override_dh_auto_install: cmake-install
 
-cmake-install-%:
-	dh_auto_install -Bbuild-python$*
+cmake-install:
+	echo "no install, it was done in build step"
+# dh_auto_install -Bbuild/toolboxes
 
 override_dh_auto_test:
 	echo "no testsuite"
