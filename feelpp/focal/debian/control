@@ -199,7 +199,7 @@ Description: A library for the finite element method
 Package: feelpp-quickstart
 Section: science
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), python3-feelpp (= ${binary:Version}), feelpp-data 
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), feelpp-data 
 Recommends: feelpp-tools, feelpp-data
 Description: A library for the finite element method
  Provides some applications codes(source and executables) such
