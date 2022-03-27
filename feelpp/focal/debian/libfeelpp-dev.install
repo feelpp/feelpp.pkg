@@ -37,3 +37,4 @@ usr/share/feelpp/hana
 usr/share/feelpp/lsan
 usr/share/feelpp/nlopt
 usr/share/feelpp/scripts
+usr/lib/cmake
