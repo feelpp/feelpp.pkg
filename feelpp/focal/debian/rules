@@ -30,7 +30,7 @@ override_dh_auto_configure: $(PYALL:python%=cmake-configure-%) \
 NUMJOBS:=$(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS))) 
 
 cmake-configure-%:
-	dh_auto_configure -Bbuild-python$* -- \
+	cmake --preset feelpp \
 		-DCMAKE_C_COMPILER=/usr/bin/clang \
 		-DCMAKE_CXX_COMPILER=/usr/bin/clang++ \
 		-DCMAKE_C_FLAGS:STRING="-DNDEBUG -O2 -Wdate-time -D_FORTIFY_SOURCE=2 " \
@@ -63,15 +63,12 @@ cmake-configure-%:
 override_dh_auto_build: $(PYALL:python%=cmake-build-%)
 
 cmake-build-%:
-	$(MAKE) -j20 -C build-python$*/
-#	$(MAKE) $(test_makeflags) -C build-python$*/python
-#	$(MAKE) $(test_makeflags) -C build-python$*
-
+	cmake --build --preset feelpp -j40 all
 
 override_dh_auto_install: $(PYALL:python%=cmake-install-%)
 
 cmake-install-%:
-	dh_auto_install -Bbuild-python$*
+	cmake --build --preset feelpp -j40 install
 
 override_dh_auto_test:
 	echo "no testsuite"
