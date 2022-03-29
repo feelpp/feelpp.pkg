@@ -28,7 +28,6 @@ usr/include/feelpp/simple-web-server
 usr/include/feelpp/std
 usr/include/feelpp/tabulate
 usr/include/feelpp/taskflow
-usr/include/feelpp/spdlog
 usr/share/feelpp/feel
 usr/share/feelpp/eigen3
 usr/share/feelpp/docker
