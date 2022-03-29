@@ -64,13 +64,13 @@ cmake-configure-%:
 override_dh_auto_build: $(PYALL:python%=cmake-build-%)
 
 cmake-build-%:
-	DESTDIR=DESTDIR=$(shell pwd)/debian/tmp /debian/tmp cmake --build --preset feelpp -j40 all
+	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset feelpp -j40 all
 	ls $(shell pwd)/debian/tmp
 
 override_dh_auto_install: $(PYALL:python%=cmake-install-%)
 
 cmake-install-%:
-	DESTDIR=DESTDIR=$(shell pwd)/debian/tmp /debian/tmp cmake --build --preset feelpp -j40 install
+	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset feelpp -j40 install
 	ls $(shell pwd)/debian/tmp
 
 override_dh_auto_test:
