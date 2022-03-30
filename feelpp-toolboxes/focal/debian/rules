@@ -64,13 +64,14 @@ override_dh_auto_build: cmake-build
 
 cmake-build:
 	cmake --version
-	DESTDIR=debian/tmp cmake --build --preset toolboxes -j40 
+	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset toolboxes -j40 
+	ls $(shell pwd)/debian/tmp
 
 override_dh_auto_install: cmake-install
 
 cmake-install:
-	echo "no install, it was done in build step"
-# dh_auto_install -Bbuild/toolboxes
+	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset toolboxes -j40 install
+	ls $(shell pwd)/debian/tmp
 
 override_dh_auto_test:
 	echo "no testsuite"
