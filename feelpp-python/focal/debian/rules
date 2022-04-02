@@ -61,7 +61,7 @@ cmake-install-%:
 	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset feelpp-python -j20 install
 
 override_dh_auto_test:
-	ctest --preset feelpp-python
+	PYTHONPATH=$(shell pwd)/debian/tmp/usr/lib/python3/dist-packages/ ctest --preset feelpp-python
 
 override_dh_shlibdeps:
 	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info -l$(shell pwd)/lib/$(shell uname -m)
