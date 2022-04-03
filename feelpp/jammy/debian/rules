@@ -30,7 +30,8 @@ override_dh_auto_configure: $(PYALL:python%=cmake-configure-%) \
 NUMJOBS:=$(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS))) 
 
 cmake-configure-%:
-	dh_auto_configure -Bbuild-python$* -- \
+	cmake --preset feelpp \
+		-DCMAKE_INSTALL_PREFIX=/usr/ \
 		-DCMAKE_C_COMPILER=/usr/bin/clang \
 		-DCMAKE_CXX_COMPILER=/usr/bin/clang++ \
 		-DCMAKE_C_FLAGS:STRING="-DNDEBUG -O2 -Wdate-time -D_FORTIFY_SOURCE=2 " \
@@ -48,6 +49,7 @@ cmake-configure-%:
 		-DFEELPP_ENABLE_MATPLOT=ON\
 		-DFEELPP_ENABLE_QUICKSTART=ON \
 		-DFEELPP_ENABLE_TOOLBOXES=OFF \
+		-DFEELPP_ENABLE_FEELPP_PYTHON=OFF \
 		-DFEELPP_ENABLE_TESTS=OFF \
 		-DFEELPP_ENABLE_PYFEELPP_LIBFEELPP=OFF \
 		-DLIBBSON_DIR=/usr \
@@ -62,15 +64,14 @@ cmake-configure-%:
 override_dh_auto_build: $(PYALL:python%=cmake-build-%)
 
 cmake-build-%:
-	$(MAKE) -j20 -C build-python$*/
-#	$(MAKE) $(test_makeflags) -C build-python$*/python
-#	$(MAKE) $(test_makeflags) -C build-python$*
-
+	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset feelpp -j40 all
+	ls $(shell pwd)/debian/tmp
 
 override_dh_auto_install: $(PYALL:python%=cmake-install-%)
 
 cmake-install-%:
-	dh_auto_install -Bbuild-python$*
+	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset feelpp -j40 install
+	ls $(shell pwd)/debian/tmp
 
 override_dh_auto_test:
 	echo "no testsuite"
@@ -82,10 +83,11 @@ override_dh_makeshlibs:
 	dh_makeshlibs -Xpyshared
 
 override_dh_strip:
-	dh_strip -plibfeelpp1 -ppython3-feelpp
+	dh_strip -plibfeelpp1 
+# -ppython3-feelpp
 
-override_dh_python3:
-	dh_python3 -p python3-feelpp
+#override_dh_python3:
+#	dh_python3 -p python3-feelpp
 
 get-orig-source:
 	uscan --force-download
