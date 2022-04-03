@@ -1,2 +1,2 @@
-usr/lib/*/libfeelpp_toolbox_hdg_*.so
+usr/lib/*/libfeelpp_toolbox_hdg*.so
 usr/include/feelpp/toolboxes/feel/feelmodels/hdg/*.hpp
