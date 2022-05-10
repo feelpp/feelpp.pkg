@@ -2,7 +2,7 @@ usr/lib/libfeelpp*.so
 usr/lib/*/libfeelpp*.so
 usr/lib/lib*.a
 usr/include/feelpp/boost/hana
-usr/include/feelpp/bsoncxx
+# usr/include/feelpp/bsoncxx
 usr/include/feelpp/concepts
 usr/include/feelpp/contrib
 usr/include/feelpp/cpr
