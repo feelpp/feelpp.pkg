@@ -18,7 +18,7 @@ usr/include/feelpp/indicators
 usr/include/feelpp/meta
 usr/include/feelpp/metis
 usr/include/feelpp/mmg
-usr/include/feelpp/mongocxx
+# usr/include/feelpp/mongocxx
 usr/include/feelpp/napp
 usr/include/feelpp/nlopt
 usr/include/feelpp/parmmg
