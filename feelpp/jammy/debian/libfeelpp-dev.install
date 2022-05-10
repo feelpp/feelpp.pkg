@@ -1,7 +1,7 @@
 usr/lib/libfeelpp*.so
 usr/lib/*/libfeelpp*.so
-usr/lib/lib*.a
-usr/include/feelpp/bsoncxx
+# usr/lib/lib*.a
+# usr/include/feelpp/bsoncxx
 usr/include/feelpp/contrib
 usr/include/feelpp/cpr
 usr/include/feelpp/eigen
@@ -14,7 +14,7 @@ usr/include/feelpp/ginac
 usr/include/feelpp/glog
 usr/include/feelpp/boost/hana
 usr/include/feelpp/metis
-usr/include/feelpp/mongocxx
+# usr/include/feelpp/mongocxx
 usr/include/feelpp/nlopt
 usr/include/feelpp/pybind11
 usr/include/feelpp/tabulate
