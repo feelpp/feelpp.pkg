@@ -33,7 +33,7 @@ usr/share/feelpp/eigen3
 usr/share/feelpp/docker
 usr/share/feelpp/feelpp_gflags
 usr/share/feelpp/glog
-usr/share/feelpp/hana
+# usr/share/feelpp/hana
 usr/share/feelpp/lsan
 usr/share/feelpp/nlopt
 usr/share/feelpp/scripts
