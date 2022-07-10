@@ -11,6 +11,8 @@ DEB_HOST_MULTIARCH := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 export DEB_CXXFLAGS_SET=-DNDEBUG -O2
 export DEB_CXXFLAGS_MAINT_SET=-DNDEBUG -O2
 export DEB_CFLAGS_SET=-DNDEBUG -O2
+PETSC_VERSION=3.14
+PETSC_DIR=/usr/lib/petscdir/petsc$(PETSC_VERSION)/$(DEB_HOST_MULTIARCH)-real
 
 #  # -Wno-undefined-var-template to reduce number of warnings from ginac
 #  # -Wno-inconsistent-missing-override to reduce number of warning due to Paraview and C++11
@@ -48,6 +50,7 @@ cmake-configure-%:
 		-DPYTHON_EXECUTABLE:FILEPATH=/usr/bin/python3\
 		-DFEELPP_ENABLE_PYFEELPP_MOR=ON \
 		-DFEELPP_ENABLE_PYFEELPP_TOOLBOXES=ON \
+		-DFEELPP_PETSC_DIR="$(PETSC_DIR)" \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,--no-as-needed -lm -lrt"
 
 override_dh_auto_build: $(PYALL:python%=cmake-build-%)
