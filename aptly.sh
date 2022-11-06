@@ -1,11 +1,13 @@
+#!/bin/bash
+
 dist=${1:-focal}
-if [ "$dist" = "focal" -o "$dist" = "impish" -o "$dist" = "jammy"]; then
+if test "$dist" = "focal" -o "$dist" = "kinetic" -o "$dist" = "jammy"; then
     flavor=ubuntu
 fi
-if [ "$dist" = "buster" -o "$dist" = "bullseye"]; then
+if test "$dist" = "buster" -o "$dist" = "bullseye" -o "$dist" = "testing" -o "$dist" = "sid"; then
     flavor=debian
 fi
-echo "dist: $impish  -- flavor: $flavor" 
+echo "dist: $dist  -- flavor: $flavor" 
 
 aptly repo create -distribution=$dist -component=stable feelpp-$dist-stable
 aptly repo create -distribution=$dist -component=latest feelpp-$dist-latest
@@ -16,6 +18,6 @@ if test -z "$BUILDKITE_PASSPHRASE"; then
 else
     echo "passphrase defined..."
     echo $BUILDKITE_PASSPHRASE > pp
-    aptly publish repo -passphrase-file=pp -architectures="amd64" -component="stable,latest" feelpp-$dist-stable feelpp-$dist-latest s3:apt.feelpp.org:$flavor
+    aptly publish repo -passphrase-file=pp -architectures="amd64" -component="stable,latest" feelpp-$dist-stable feelpp-$dist-latest s3:apt.feelpp.org:$flavor/$dist
     rm pp
 fi
