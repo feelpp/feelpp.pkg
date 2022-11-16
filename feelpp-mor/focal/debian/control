@@ -30,11 +30,3 @@ Architecture: amd64 i386 ia64 powerpc sparc
 Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-mor1 (= ${binary:Version})
 Description: Feel++ MOR applications
  Provides Feel++ model order reduction applications
-
-Package: python3-feelpp-mor
-Section: python
-Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), python3-feelpp-toolboxes (= ${binary:Version})
-Description: Feel++ MOR Python bindings
- Provides Feel++ model order reduction via Python bindings
-
