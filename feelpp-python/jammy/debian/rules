@@ -54,12 +54,12 @@ cmake-configure-%:
 override_dh_auto_build: $(PYALL:python%=cmake-build-%)
 
 cmake-build-%:
-	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset feelpp-python -j20 all
+	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset feelpp-python -j20 -t all
 
 override_dh_auto_install: $(PYALL:python%=cmake-install-%)
 
 cmake-install-%:
-	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset feelpp-python -j20 install
+	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset feelpp-python -j20 -t install/fast
 
 override_dh_auto_test:
 	echo "no test"
