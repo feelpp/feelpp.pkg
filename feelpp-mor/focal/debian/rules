@@ -55,7 +55,7 @@ override_dh_auto_build: $(PYALL:python%=cmake-build-%)
 cmake-build-%:
 	cmake --version
 	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset mor -j20 
-	ls $(shell pwd)/debian/tmp
+#	ls $(shell pwd)/debian/tmp
 
 override_dh_auto_install: $(PYALL:python%=cmake-install-%)
 
