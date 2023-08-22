@@ -3,7 +3,7 @@ Section: science
 Priority: extra
 Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
 Uploaders: Christophe Prud'homme <prudhomm@debian.org>
-Build-Depends: quilt, debhelper (>= 10), dh-python, libfeelpp-toolboxes1-all-dev
+Build-Depends: quilt, debhelper (>= 10), dh-python, libfeelpp-toolboxes1-all-dev, libzip-dev
 Standards-Version: 3.9.4
 X-Python-Version: current
 Homepage: http://www.feelpp.org
@@ -13,14 +13,14 @@ Vcs-Browser: http://svn.debian.org/wsvn/debian-science/packages/feel++/trunk
 Package: libfeelpp-mor1
 Section: libs
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), libzip-dev
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version})
 Description: Feel++ MOR libraries
  Provides Feel++ model order reduction libraries
 
 Package: libfeelpp-mor-dev
 Section: libdevel
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: libfeelpp-toolboxes1-all-dev (= ${binary:Version}), libfeelpp-mor1 (= ${binary:Version})
+Depends: libfeelpp-toolboxes1-all-dev (= ${binary:Version}), libfeelpp-mor1 (= ${binary:Version}), libzip-dev
 Description: Development files for Feel++ mor 
  Provides the header files and static libraries.
 
