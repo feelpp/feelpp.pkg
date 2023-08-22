@@ -13,7 +13,7 @@ Vcs-Browser: http://svn.debian.org/wsvn/debian-science/packages/feel++/trunk
 Package: libfeelpp-mor1
 Section: libs
 Architecture: amd64 i386 ia64 powerpc sparc
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp1 (= ${binary:Version}), libzip-dev
 Description: Feel++ MOR libraries
  Provides Feel++ model order reduction libraries
 
