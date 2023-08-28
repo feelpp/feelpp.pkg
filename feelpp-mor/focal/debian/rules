@@ -54,13 +54,13 @@ override_dh_auto_build: $(PYALL:python%=cmake-build-%)
 
 cmake-build-%:
 	cmake --version
-	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset mor -j20 -t install
+	cmake --build --preset mor -j20 
 
 override_dh_auto_install: $(PYALL:python%=cmake-install-%)
 
 cmake-install-%:
 	echo "install in $(shell pwd)/debian/tmp"
-
+	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset mor -j20 -t install
 
 override_dh_auto_test:
 	echo "no testsuite"
