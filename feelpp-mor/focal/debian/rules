@@ -59,7 +59,7 @@ cmake-build-%:
 override_dh_auto_install: $(PYALL:python%=cmake-install-%)
 
 cmake-install-%:
-	dh_auto_install -B$(shell pwd)/debian/tmp
+	echo "install in $(shell pwd)/debian/tmp"
 
 
 override_dh_auto_test:
