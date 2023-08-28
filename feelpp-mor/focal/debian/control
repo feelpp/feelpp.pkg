@@ -28,5 +28,14 @@ Package: feelpp-mor
 Section: science
 Architecture: amd64 i386 ia64 powerpc sparc
 Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-mor1 (= ${binary:Version})
-Description: Feel++ MOR applications
- Provides Feel++ model order reduction applications
+Description: Feel++ MOR tools
+ Provides Feel++ model order reduction tools such as 
+ - MOR online run
+ - Feel++ toolbox heat MOR offline 
+
+Package: feelpp-mor-casestudies
+Section: science
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-mor1 (= ${binary:Version})
+Description: Feel++ MOR case studies
+ Provides Feel++ model order reduction case studies
