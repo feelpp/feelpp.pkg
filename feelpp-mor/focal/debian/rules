@@ -34,7 +34,6 @@ NUMJOBS:=$(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 
 cmake-configure-%:
 	cmake --preset mor \
-		-DDESTDIR=$(shell pwd)/debian/tmp \
 		-DCMAKE_INSTALL_PREFIX=/usr/ \
 		-DCMAKE_C_COMPILER=/usr/bin/clang \
 		-DCMAKE_CXX_COMPILER=/usr/bin/clang++\
@@ -55,7 +54,7 @@ override_dh_auto_build: $(PYALL:python%=cmake-build-%)
 
 cmake-build-%:
 	cmake --version
-	cmake --build --preset mor -j20 -t install
+	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset mor -j20 -t install
 
 override_dh_auto_install: $(PYALL:python%=cmake-install-%)
 
