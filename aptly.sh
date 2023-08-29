@@ -4,7 +4,7 @@ dist=${1:-focal}
 if test "$dist" = "focal" -o "$dist" = "kinetic" -o "$dist" = "jammy" -o "$dist" = "lunar"; then
     flavor=ubuntu
 fi
-if test "$dist" = "buster" -o "$dist" = "bullseye"-o "$dist" = "bookworm" -o "$dist" = "testing" -o "$dist" = "sid"; then
+if test "$dist" = "buster" -o "$dist" = "bullseye" -o "$dist" = "bookworm" -o "$dist" = "testing" -o "$dist" = "sid"; then
     flavor=debian
 fi
 echo "dist: $dist  -- flavor: $flavor" 
