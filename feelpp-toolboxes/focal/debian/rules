@@ -64,12 +64,12 @@ override_dh_auto_build: cmake-build
 
 cmake-build:
 	cmake --version
-	cmake --build --preset toolboxes -j$(NUMJOBS) all
+	cmake --build --preset toolboxes -j$(NUMJOBS) -t all
 
 override_dh_auto_install: cmake-install
 
 cmake-install:
-	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset toolboxes install/fast
+	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset toolboxes -t install/fast
 	ls $(shell pwd)/debian/tmp
 
 override_dh_auto_test:
