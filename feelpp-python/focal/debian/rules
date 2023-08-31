@@ -54,7 +54,7 @@ cmake-configure-%:
 override_dh_auto_build: $(PYALL:python%=cmake-build-%)
 
 cmake-build-%:
-	cmake --build --preset feelpp-python -j$(NUMJOBS) -t all
+	DESTDIR=$(shell pwd)/debian/tmp cmake --build --preset feelpp-python -j$(NUMJOBS) -t all
 
 override_dh_auto_install: $(PYALL:python%=cmake-install-%)
 
