@@ -27,6 +27,7 @@ usr/include/feelpp/parmmg
 usr/include/feelpp/pybind11
 usr/include/feelpp/range
 usr/include/feelpp/simple-web-server
+usr/include/feelpp/specx
 usr/include/feelpp/std
 usr/include/feelpp/tabulate
 # usr/include/feelpp/taskflow
