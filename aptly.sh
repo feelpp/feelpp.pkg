@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dist=${1:-focal}
-if test "$dist" = "focal" -o "$dist" = "kinetic" -o "$dist" = "jammy" -o "$dist" = "lunar"; then
+if test "$dist" = "focal" -o "$dist" = "kinetic" -o "$dist" = "jammy" -o "$dist" = "noble"; then
     flavor=ubuntu
 fi
 if test "$dist" = "buster" -o "$dist" = "bullseye" -o "$dist" = "bookworm" -o "$dist" = "testing" -o "$dist" = "sid"; then
