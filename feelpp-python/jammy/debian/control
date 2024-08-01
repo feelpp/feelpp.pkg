@@ -97,13 +97,13 @@ Description: Feel++ toolboxes hdg Python bindings
 # Description: Feel++ toolboxes fsi Python bindings
 #  Provides Feel++ fsi toolbox via Python bindings
 # 
-# Package: python3-feelpp-toolboxes-heatfluid
-# Section: python
-# Architecture: amd64 i386 ia64 powerpc sparc
-# Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-heatfluid (= ${binary:Version})
-# Recommends: feelpp-toolboxes-data
-# Description: Feel++ toolboxes heatfluid Python bindings
-#  Provides Feel++ heatfluid toolbox via Python bindings
+Package: python3-feelpp-toolboxes-heatfluid
+Section: python
+Architecture: amd64 i386 ia64 powerpc sparc
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfeelpp-toolboxes1-heatfluid (= ${binary:Version})
+Recommends: feelpp-toolboxes-data
+Description: Feel++ toolboxes heatfluid Python bindings
+ Provides Feel++ heatfluid toolbox via Python bindings
 
 Package: python3-feelpp-toolboxes-thermoelectric
 Section: python
