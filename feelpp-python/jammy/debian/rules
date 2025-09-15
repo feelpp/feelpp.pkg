@@ -49,6 +49,7 @@ cmake-configure-%:
 		-DFEELPP_ENABLE_PYFEELPP_MOR=ON \
 		-DFEELPP_ENABLE_PYFEELPP_TOOLBOXES=ON \
 		-DFEELPP_ENABLE_PYTHON3_VENV=OFF \
+		-DPYTHON_SITE_PACKAGES=lib/python${PYALL}/dist-packages \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,--no-as-needed -lm -lrt"
 
 override_dh_auto_build: $(PYALL:python%=cmake-build-%)
